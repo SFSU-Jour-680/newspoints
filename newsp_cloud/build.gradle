@@ -1,0 +1,19 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile project(':newsp_lib')
+
+    // dropbox
+    // follow this link https://github.com/dropbox/dropbox-sdk-java
+    compile 'com.dropbox.core:dropbox-core-sdk:2.1.1'
+
+    // google drive api
+    compile 'com.google.apis:google-api-services-drive:v3-rev59-1.22.0'
+}

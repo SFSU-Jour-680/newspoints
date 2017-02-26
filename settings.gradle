@@ -1,0 +1,1 @@
+include ':app', ':newsp_lib', ':newsp_data', ':newsp_cloud'

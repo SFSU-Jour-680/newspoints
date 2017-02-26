@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Newspoints.iml" filepath="$PROJECT_DIR$/Newspoints.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/newsp_cloud/newsp_cloud.iml" filepath="$PROJECT_DIR$/newsp_cloud/newsp_cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/newsp_data/newsp_data.iml" filepath="$PROJECT_DIR$/newsp_data/newsp_data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/newsp_lib/newsp_lib.iml" filepath="$PROJECT_DIR$/newsp_lib/newsp_lib.iml" />
+    </modules>
+  </component>
+</project>

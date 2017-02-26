@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">newsp_lib</string>
+    <string name="perm_pref_file_name">PERMISSION_FILE</string>
+</resources>
