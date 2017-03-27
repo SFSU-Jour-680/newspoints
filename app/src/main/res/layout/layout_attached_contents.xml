@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/linearLayout_dragView_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray"
+    android:clickable="true"
+    android:focusable="false"
+    android:orientation="vertical">
+
+    <!--The main container layout for displaying all the required contents attached to video-->
+    <RelativeLayout
+        android:id="@+id/relativeLayout_attachedContents"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_dimen_X_large"
+        android:background="@color/colorGray">
+
+        <ImageView
+            android:layout_width="@dimen/widget_dimen_X_small"
+            android:layout_height="@dimen/widget_dimen_X_small"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_drag_handle_grey_400_24dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_slidingPanel_attachedContents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_dimen_X_large"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_dimen_large"
+            android:text="@string/text_shots"
+            android:textColor="@color/textLight"
+            android:textSize="@dimen/font_small"/>
+
+        <org.apmem.tools.layouts.FlowLayout
+            android:id="@+id/flowLayout_dragView_selectedShots_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/view_dimen_large"
+            android:paddingStart="@dimen/view_dimen_large">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/view_dimen_X_small"
+                android:layout_marginStart="@dimen/view_dimen_X_small"
+                android:background="@color/colorShot"
+                android:paddingBottom="@dimen/view_dimen_X_small"
+                android:paddingEnd="@dimen/view_dimen_small"
+                android:paddingStart="@dimen/view_dimen_small"
+                android:paddingTop="@dimen/view_dimen_X_small"
+                android:text="Interview"
+                android:textColor="@color/textWhite"
+                android:textSize="@dimen/font_X_small"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/view_dimen_X_small"
+                android:layout_marginStart="@dimen/view_dimen_X_small"
+                android:background="@color/colorShot"
+                android:paddingBottom="@dimen/view_dimen_X_small"
+                android:paddingEnd="@dimen/view_dimen_small"
+                android:paddingStart="@dimen/view_dimen_small"
+                android:paddingTop="@dimen/view_dimen_X_small"
+                android:text="Medium"
+                android:textColor="@color/textWhite"
+                android:textSize="@dimen/font_X_small"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/view_dimen_X_small"
+                android:layout_marginStart="@dimen/view_dimen_X_small"
+                android:background="@color/colorShot"
+                android:paddingBottom="@dimen/view_dimen_X_small"
+                android:paddingEnd="@dimen/view_dimen_small"
+                android:paddingStart="@dimen/view_dimen_small"
+                android:paddingTop="@dimen/view_dimen_X_small"
+                android:text="X-Close"
+                android:textColor="@color/textWhite"
+                android:textSize="@dimen/font_X_small"/>
+
+        </org.apmem.tools.layouts.FlowLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_dimen_large"
+            android:text="@string/text_sources"
+            android:textColor="@color/textLight"
+            android:textSize="@dimen/font_small"/>
+
+        <org.apmem.tools.layouts.FlowLayout
+            android:id="@+id/flowLayout_dragView_selectedSources_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/view_dimen_large"
+            android:paddingStart="@dimen/view_dimen_large">
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="@dimen/view_dimen_X_small"-->
+            <!--android:layout_marginStart="@dimen/view_dimen_X_small"-->
+            <!--android:background="@color/colorSource"-->
+            <!--android:paddingBottom="@dimen/view_dimen_X_small"-->
+            <!--android:paddingEnd="@dimen/view_dimen_small"-->
+            <!--android:paddingStart="@dimen/view_dimen_small"-->
+            <!--android:paddingTop="@dimen/view_dimen_X_small"-->
+            <!--android:text="Official"-->
+            <!--android:textColor="@color/textWhite"-->
+            <!--android:textSize="@dimen/font_X_small"/>-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="@dimen/view_dimen_X_small"-->
+            <!--android:layout_marginStart="@dimen/view_dimen_X_small"-->
+            <!--android:background="@color/colorSource"-->
+            <!--android:paddingBottom="@dimen/view_dimen_X_small"-->
+            <!--android:paddingEnd="@dimen/view_dimen_small"-->
+            <!--android:paddingStart="@dimen/view_dimen_small"-->
+            <!--android:paddingTop="@dimen/view_dimen_X_small"-->
+            <!--android:text="Official"-->
+            <!--android:textColor="@color/textWhite"-->
+            <!--android:textSize="@dimen/font_X_small"/>-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="@dimen/view_dimen_X_small"-->
+            <!--android:layout_marginStart="@dimen/view_dimen_X_small"-->
+            <!--android:background="@color/colorSource"-->
+            <!--android:paddingBottom="@dimen/view_dimen_X_small"-->
+            <!--android:paddingEnd="@dimen/view_dimen_small"-->
+            <!--android:paddingStart="@dimen/view_dimen_small"-->
+            <!--android:paddingTop="@dimen/view_dimen_X_small"-->
+            <!--android:text="Official"-->
+            <!--android:textColor="@color/textWhite"-->
+            <!--android:textSize="@dimen/font_X_small"/>-->
+
+        </org.apmem.tools.layouts.FlowLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_dimen_large"
+            android:text="@string/text_questions"
+            android:textColor="@color/textLight"
+            android:textSize="@dimen/font_small"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_dragView_selectedQuestions_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/view_dimen_large"
+            android:paddingStart="@dimen/view_dimen_large">
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="@dimen/view_dimen_X_small"-->
+            <!--android:background="@color/colorQuestion"-->
+            <!--android:paddingBottom="@dimen/view_dimen_X_small"-->
+            <!--android:paddingEnd="@dimen/view_dimen_small"-->
+            <!--android:paddingStart="@dimen/view_dimen_small"-->
+            <!--android:paddingTop="@dimen/view_dimen_X_small"-->
+            <!--android:text="Who was responsible"-->
+            <!--android:textColor="@color/textWhite"-->
+            <!--android:textSize="@dimen/font_X_small"/>-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="@dimen/view_dimen_X_small"-->
+            <!--android:background="@color/colorQuestion"-->
+            <!--android:paddingBottom="@dimen/view_dimen_X_small"-->
+            <!--android:paddingEnd="@dimen/view_dimen_small"-->
+            <!--android:paddingStart="@dimen/view_dimen_small"-->
+            <!--android:paddingTop="@dimen/view_dimen_X_small"-->
+            <!--android:text="Who was responsible"-->
+            <!--android:textColor="@color/textWhite"-->
+            <!--android:textSize="@dimen/font_X_small"/>-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="@dimen/view_dimen_X_small"-->
+            <!--android:background="@color/colorQuestion"-->
+            <!--android:paddingBottom="@dimen/view_dimen_X_small"-->
+            <!--android:paddingEnd="@dimen/view_dimen_small"-->
+            <!--android:paddingStart="@dimen/view_dimen_small"-->
+            <!--android:paddingTop="@dimen/view_dimen_X_small"-->
+            <!--android:text="Who was responsible"-->
+            <!--android:textColor="@color/textWhite"-->
+            <!--android:textSize="@dimen/font_X_small"/>-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

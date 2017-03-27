@@ -4,15 +4,15 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.newspoints.journalist.R;
-import com.newspoints.journalist.util.ProjectConstants;
-import com.newspoints.journalist.database.DaoSession;
-import com.newspoints.journalist.database.ProjectDao;
-import com.newspoints.journalist.util.AppUtil;
 
 import java.util.ArrayList;
 
 import de.greenrobot.dao.DaoException;
+import newspoints.sfsu.com.newsp_data.R;
+import newspoints.sfsu.com.newsp_data.dao.DaoSession;
+import newspoints.sfsu.com.newsp_data.dao.ProjectDao;
+import newspoints.sfsu.com.newsp_data.util.ProjectConstants;
+import newspoints.sfsu.com.newsp_lib.util.AppUtil;
 
 /**
  * Represents a Project entity that contains meta data, event and media content such as image, videos and/or audio.
@@ -44,7 +44,7 @@ public class Project implements Parcelable {
     private LatLng mLatLng;
     private long timestamp;
     private ArrayList<Audio> audioList;
-    private ArrayList<MyVideo> myVideoList;
+    private ArrayList<NPVideo> NPVideoList;
 
 
     /**
@@ -101,7 +101,7 @@ public class Project implements Parcelable {
         mLatLng = in.readParcelable(LatLng.class.getClassLoader());
         timestamp = in.readLong();
         audioList = in.createTypedArrayList(Audio.CREATOR);
-        myVideoList = in.createTypedArrayList(MyVideo.CREATOR);
+        NPVideoList = in.createTypedArrayList(NPVideo.CREATOR);
     }
 
     public static Project createInstance() {
@@ -207,12 +207,12 @@ public class Project implements Parcelable {
         this.audioList = audioList;
     }
 
-    public ArrayList<MyVideo> getMyVideoList() {
-        return myVideoList;
+    public ArrayList<NPVideo> getNPVideoList() {
+        return NPVideoList;
     }
 
-    public void setMyVideoList(ArrayList<MyVideo> myVideoList) {
-        this.myVideoList = myVideoList;
+    public void setNPVideoList(ArrayList<NPVideo> NPVideoList) {
+        this.NPVideoList = NPVideoList;
     }
 
     public long getCloudStorage() {
@@ -241,7 +241,7 @@ public class Project implements Parcelable {
         dest.writeParcelable(mLatLng, flags);
         dest.writeLong(timestamp);
         dest.writeTypedList(audioList);
-        dest.writeTypedList(myVideoList);
+        dest.writeTypedList(NPVideoList);
     }
 
     /**

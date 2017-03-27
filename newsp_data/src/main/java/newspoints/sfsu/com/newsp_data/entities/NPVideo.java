@@ -12,17 +12,17 @@ import java.util.ArrayList;
  * <p/>
  * Created by Pavitra on 2/16/2016.
  */
-public class MyVideo implements Parcelable {
+public class NPVideo implements Parcelable {
 
-    public static final Creator<MyVideo> CREATOR = new Creator<MyVideo>() {
+    public static final Creator<NPVideo> CREATOR = new Creator<NPVideo>() {
         @Override
-        public MyVideo createFromParcel(Parcel in) {
-            return new MyVideo(in);
+        public NPVideo createFromParcel(Parcel in) {
+            return new NPVideo(in);
         }
 
         @Override
-        public MyVideo[] newArray(int size) {
-            return new MyVideo[size];
+        public NPVideo[] newArray(int size) {
+            return new NPVideo[size];
         }
     };
     private long id;
@@ -38,7 +38,7 @@ public class MyVideo implements Parcelable {
     private ArrayList<Shot> shotList;
 
     // overloading for Demo purpose
-    public MyVideo(String name, String videoUrl, int startTime, int endTime, long timestamp, LatLng mLatLng, ArrayList<Question> questionList, ArrayList<Source> sourceList, ArrayList<Shot> shotList) {
+    public NPVideo(String name, String videoUrl, int startTime, int endTime, long timestamp, LatLng mLatLng, ArrayList<Question> questionList, ArrayList<Source> sourceList, ArrayList<Shot> shotList) {
         this.name = name;
         this.videoUrl = videoUrl;
         this.startTime = startTime;
@@ -51,7 +51,7 @@ public class MyVideo implements Parcelable {
     }
 
     // main constructor
-    public MyVideo(long id, String name, String videoUrl, int startTime, int endTime, long timestamp, LatLng mLatLng, ArrayList<Question> questionList, ArrayList<Source> sourceList, ArrayList<Shot> shotList) {
+    public NPVideo(long id, String name, String videoUrl, int startTime, int endTime, long timestamp, LatLng mLatLng, ArrayList<Question> questionList, ArrayList<Source> sourceList, ArrayList<Shot> shotList) {
         this.id = id;
         this.name = name;
         this.videoUrl = videoUrl;
@@ -64,7 +64,7 @@ public class MyVideo implements Parcelable {
         this.shotList = shotList;
     }
 
-    protected MyVideo(Parcel in) {
+    protected NPVideo(Parcel in) {
         id = in.readLong();
         name = in.readString();
         videoUrl = in.readString();

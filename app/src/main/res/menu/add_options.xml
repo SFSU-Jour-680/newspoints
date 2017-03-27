@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/add_video"
+        android:icon="@mipmap/ic_videocam_white_24dp"
+        android:title="Add Video"
+        android:showAsAction="always"/>
+    <item
+        android:id="@+id/add_audio"
+        android:icon="@mipmap/ic_mic_white_24dp"
+        android:title="Add Audio"
+        android:showAsAction="always"/>
+
+</menu>

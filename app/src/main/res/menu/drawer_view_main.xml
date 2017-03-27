@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/menu_main"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@mipmap/ic_home_black_24dp"
+            android:title="@string/nav_dashboard"/>
+        <item
+            android:id="@+id/nav_project"
+            android:icon="@mipmap/ic_list_black_24dp"
+            android:title="@string/nav_projects"/>
+
+        <item
+            android:id="@+id/nav_cloud"
+            android:icon="@mipmap/ic_cloud_done_black_36dp"
+            android:title="@string/nav_cloud"/>
+
+        <item
+            android:id="@+id/nav_tutorial"
+            android:icon="@mipmap/ic_help_black_24dp"
+            android:title="@string/nav_tutorial"/>
+    </group>
+
+
+    <group
+        android:id="@+id/menu_settings"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@mipmap/ic_person_black_24dp"
+            android:title="@string/nav_profile"/>
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@mipmap/ic_settings_black_24dp"
+            android:title="@string/nav_settings"/>
+    </group>
+    <group
+        android:id="@+id/menu_logout"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@mipmap/ic_home_black_24dp"
+            android:title="@string/nav_logout"/>
+    </group>
+
+</menu>

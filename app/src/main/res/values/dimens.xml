@@ -1,5 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <!-- Widget and View dimensions -->
+    <dimen name="view_dimen_X1_small">2dp</dimen>
+    <dimen name="view_dimen_X_small">4dp</dimen>
+    <dimen name="view_dimen_small">8dp</dimen>
+    <dimen name="view_dimen_medium">12dp</dimen>
+    <dimen name="view_dimen_temp">14dp</dimen>
+    <dimen name="view_dimen_large">16dp</dimen>
+    <dimen name="view_dimen_default">18dp</dimen>
+    <dimen name="view_dimen_X_large">24dp</dimen>
+    <dimen name="view_dimen_X1_large">30dp</dimen>
+    <dimen name="view_dimen_X2_large">36dp</dimen>
+    <dimen name="view_dimen_X3_large">42dp</dimen>
+
+    <!-- Widget large dimen sizes-->
+    <dimen name="widget_dimen_X_small">24dp</dimen>
+    <dimen name="widget_dimen_small">32dp</dimen>
+    <dimen name="widget_dimen_medium">40dp</dimen>
+    <dimen name="widget_dimen_large">48dp</dimen>
+    <dimen name="widget_dimen_X_large">64dp</dimen>
+    <dimen name="widget_dimen_X1_large">72dp</dimen>
+    <dimen name="widget_dimen_X2_large">96dp</dimen>
+    <dimen name="widget_dimen_X3_large">120dp</dimen>
+
+    <dimen name="video_height">180dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <!-- Dimensions for Font size : Application wide-->
+    <dimen name="font_X2_small">10sp</dimen>
+    <dimen name="font_X1_small">12sp</dimen>
+    <dimen name="font_X_small">14sp</dimen>
+    <dimen name="font_small">16sp</dimen>
+    <dimen name="font_medium">18sp</dimen>
+    <dimen name="font_large">20sp</dimen>
+    <dimen name="font_X_large">22sp</dimen>
+    <dimen name="font_X1_large">24sp</dimen>
+    <dimen name="font_X2_large">28sp</dimen>
+    <dimen name="font_X3_large">36sp</dimen>
+
+    <!-- FAB dimensions-->
+    <dimen name="dimen_material_default">56dp</dimen>
+    <dimen name="dimen_material_large">70dp</dimen>
+    <dimen name="dimen_material_X_large">84dp</dimen>
+
+    <dimen name="card_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Dimen for Thumbnail MapView and Images CardView -->
+    <dimen name="cardview_elevation">8dp</dimen>
+    <dimen name="cardview_X2_small">100dp</dimen>
+    <dimen name="cardview_X1_small">120dp</dimen>
+    <dimen name="cardview_X_small">140dp</dimen>
+    <dimen name="cardview_small">160dp</dimen>
+    <dimen name="cardview_default">180dp</dimen>
+    <dimen name="cardview_medium">220dp</dimen>
+    <dimen name="cardview_large">200dp</dimen>
+    <dimen name="cardview_X_large">240dp</dimen>
+    <dimen name="cardview_X1_large">256dp</dimen>
+    <dimen name="cardview_X2_large">272dp</dimen>
+    <dimen name="cardview_X3_large">296dp</dimen>
+
 </resources>

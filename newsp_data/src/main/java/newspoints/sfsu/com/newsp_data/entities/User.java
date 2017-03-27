@@ -3,8 +3,9 @@ package newspoints.sfsu.com.newsp_data.entities;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.newspoints.journalist.database.DaoSession;
-import com.newspoints.journalist.database.UserDao;
+import newspoints.sfsu.com.newsp_data.dao.DaoSession;
+import newspoints.sfsu.com.newsp_data.dao.UserDao;
+
 
 /**
  * User of the Newspoints app.

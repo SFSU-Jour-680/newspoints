@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:fab="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.ProjectActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView_createProj_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cardview_X_large"
+        android:adjustViewBounds="true"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/placeholder_screenshot"/>
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_createProj_addImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/imageView_createProj_main"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="-40dp"
+        android:layout_marginEnd="@dimen/view_dimen_small"
+        fab:fab_colorNormal="@color/colorPrimary"
+        fab:fab_colorPressed="@color/colorPrimaryDark"
+        fab:fab_icon="@mipmap/ic_photo_camera_white_24dp"
+        tools:ignore="RelativeOverlap"/>
+
+
+    <ImageView
+        android:id="@+id/icon_createProj_projectName"
+        android:layout_width="@dimen/widget_dimen_large"
+        android:layout_height="@dimen/widget_dimen_large"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/imageView_createProj_main"
+        android:layout_marginStart="@dimen/view_dimen_small"
+        android:layout_marginTop="@dimen/view_dimen_X1_large"
+        android:padding="@dimen/view_dimen_medium"
+        android:src="@mipmap/ic_collections_bookmark_black_36dp"/>
+
+    <EditText
+        android:id="@+id/editText_createProj_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_dimen_large"
+        android:layout_below="@id/imageView_createProj_main"
+        android:layout_marginEnd="@dimen/view_dimen_large"
+        android:layout_marginTop="@dimen/view_dimen_X1_large"
+        android:layout_toEndOf="@id/icon_createProj_projectName"
+        android:ellipsize="end"
+        android:hint="@string/hint_projectName"
+        android:maxLines="1"
+        android:textColor="@color/colorPrimary"/>
+
+    <ImageView
+        android:id="@+id/icon_createProj_category"
+        android:layout_width="@dimen/widget_dimen_large"
+        android:layout_height="@dimen/widget_dimen_large"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/icon_createProj_projectName"
+        android:layout_marginStart="@dimen/view_dimen_small"
+        android:layout_marginTop="@dimen/view_dimen_X_large"
+        android:padding="@dimen/view_dimen_medium"
+        android:src="@mipmap/ic_category"/>
+
+    <TextView
+        android:id="@+id/sub_head_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText_createProj_name"
+        android:layout_marginStart="@dimen/view_dimen_large"
+        android:layout_marginTop="@dimen/view_dimen_small"
+        android:text="@string/hint_selectGuide"
+        android:textColor="@color/textSecondary"/>
+
+    <Spinner
+        android:id="@+id/spinner_createProj_category"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_dimen_large"
+        android:layout_alignTop="@id/icon_createProj_category"
+        android:layout_below="@id/sub_head_second"
+        android:layout_marginEnd="@dimen/view_dimen_large"
+        android:layout_toEndOf="@id/icon_createProj_category"/>
+
+    <ImageView
+        android:id="@+id/icon_createProj_description"
+        android:layout_width="@dimen/widget_dimen_large"
+        android:layout_height="@dimen/widget_dimen_large"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/spinner_createProj_category"
+        android:layout_marginStart="@dimen/view_dimen_small"
+        android:layout_marginTop="@dimen/view_dimen_large"
+        android:padding="@dimen/view_dimen_medium"
+        android:src="@mipmap/ic_description_black_24dp"/>
+
+    <EditText
+        android:id="@+id/editText_createProj_description"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_dimen_large"
+        android:layout_below="@id/spinner_createProj_category"
+        android:layout_marginEnd="@dimen/view_dimen_large"
+        android:layout_marginTop="@dimen/view_dimen_large"
+        android:layout_toEndOf="@id/icon_createProj_projectName"
+        android:ellipsize="end"
+        android:hint="@string/hint_description"
+        android:maxLines="1"
+        android:textColor="@color/colorPrimary"/>
+
+    <Button
+        android:id="@+id/button_createProj_createProj"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/widget_dimen_large"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/view_dimen_large"
+        android:padding="@dimen/view_dimen_small"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:text="@string/button_createProject"
+        android:textColor="@color/textWhite"
+        android:textSize="@dimen/font_small"/>
+
+
+</RelativeLayout>

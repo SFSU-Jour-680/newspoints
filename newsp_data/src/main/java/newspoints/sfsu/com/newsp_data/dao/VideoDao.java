@@ -5,7 +5,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
 import com.google.common.base.Preconditions;
-import com.newspoints.journalist.entities.MyVideo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,14 +13,15 @@ import de.greenrobot.dao.AbstractDao;
 import de.greenrobot.dao.Property;
 import de.greenrobot.dao.internal.DaoConfig;
 import de.greenrobot.dao.internal.SqlUtils;
+import newspoints.sfsu.com.newsp_data.entities.NPVideo;
 
 /**
- * DAO layer for performing all operations on MyVideo
+ * DAO layer for performing all operations on NPVideo
  * <p/>
  * Created by Pavitra on 2/18/2016.
  */
 // TODO : define relationship
-public class VideoDao extends AbstractDao<MyVideo, Long> {
+public class VideoDao extends AbstractDao<NPVideo, Long> {
 
     public static final String TABLENAME = "NEWSP_VIDEO";
     private DaoSession mDaoSession;
@@ -49,7 +49,7 @@ public class VideoDao extends AbstractDao<MyVideo, Long> {
     }
 
     @Override
-    protected MyVideo readEntity(Cursor cursor, int offset) {
+    protected NPVideo readEntity(Cursor cursor, int offset) {
         return null;
     }
 
@@ -59,7 +59,7 @@ public class VideoDao extends AbstractDao<MyVideo, Long> {
     }
 
     @Override
-    protected void readEntity(Cursor cursor, MyVideo entity, int offset) {
+    protected void readEntity(Cursor cursor, NPVideo entity, int offset) {
         entity.setId(cursor.isNull(offset) ? null : cursor.getLong(offset));
         entity.setName(cursor.getString(offset + 1));
         entity.setStartTime(cursor.getInt(offset + 2));
@@ -69,7 +69,7 @@ public class VideoDao extends AbstractDao<MyVideo, Long> {
     }
 
     @Override
-    protected void bindValues(SQLiteStatement stmt, MyVideo entity) {
+    protected void bindValues(SQLiteStatement stmt, NPVideo entity) {
         stmt.clearBindings();
 
         Long id = entity.getId();
@@ -85,13 +85,13 @@ public class VideoDao extends AbstractDao<MyVideo, Long> {
     }
 
     @Override
-    protected Long updateKeyAfterInsert(MyVideo entity, long rowId) {
+    protected Long updateKeyAfterInsert(NPVideo entity, long rowId) {
         entity.setId(rowId);
         return rowId;
     }
 
     @Override
-    protected Long getKey(MyVideo entity) {
+    protected Long getKey(NPVideo entity) {
         if (entity != null) {
             return entity.getId();
         } else {
@@ -104,20 +104,20 @@ public class VideoDao extends AbstractDao<MyVideo, Long> {
         return true;
     }
 
-    protected MyVideo loadCurrentDeep(Cursor cursor, boolean lock) {
-        MyVideo myVideo = loadCurrent(cursor, 0, lock);
+    protected NPVideo loadCurrentDeep(Cursor cursor, boolean lock) {
+        NPVideo NPVideo = loadCurrent(cursor, 0, lock);
         // offset by which the cursor builds Object
         int offset = getAllColumns().length;
-        return myVideo;
+        return NPVideo;
     }
 
     /**
-     * Builds MyVideo from the key using cursor
+     * Builds NPVideo from the key using cursor
      *
      * @param key
      * @return
      */
-    public MyVideo loadDeep(Long key) {
+    public NPVideo loadDeep(Long key) {
         assertSinglePk();
         if (key == null) {
             return null;
@@ -142,11 +142,11 @@ public class VideoDao extends AbstractDao<MyVideo, Long> {
     }
 
     /**
-     * Reads all available rows from the given cursor and returns a list of MyVideo objects
+     * Reads all available rows from the given cursor and returns a list of NPVideo objects
      */
-    private List<MyVideo> loadAllDeepFromCursor(Cursor cursor) {
+    private List<NPVideo> loadAllDeepFromCursor(Cursor cursor) {
         int count = cursor.getCount();
-        List<MyVideo> list = new ArrayList<MyVideo>(count);
+        List<NPVideo> list = new ArrayList<NPVideo>(count);
 
         if (cursor.moveToFirst()) {
             if (identityScope != null) {
@@ -172,7 +172,7 @@ public class VideoDao extends AbstractDao<MyVideo, Long> {
      * @param cursor
      * @return
      */
-    private List<MyVideo> loadDeepAllAndCloseCursor(Cursor cursor) {
+    private List<NPVideo> loadDeepAllAndCloseCursor(Cursor cursor) {
         try {
             return loadAllDeepFromCursor(cursor);
         } finally {
@@ -181,13 +181,13 @@ public class VideoDao extends AbstractDao<MyVideo, Long> {
     }
 
     /**
-     * A raw-style query where you can pass any WHERE clause and arguments to query MyVideo
+     * A raw-style query where you can pass any WHERE clause and arguments to query NPVideo
      *
      * @param where
      * @param selectionArg
-     * @return List of MyVideo
+     * @return List of NPVideo
      */
-    public List<MyVideo> getAll(String where, String... selectionArg) {
+    public List<NPVideo> getAll(String where, String... selectionArg) {
         Cursor cursor = db.rawQuery(getSelectDeep() + where, selectionArg);
         return loadDeepAllAndCloseCursor(cursor);
     }

@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorSecondary"
+                android:paddingEnd="@dimen/view_dimen_large"
+                android:paddingStart="@dimen/view_dimen_large"
+                android:paddingTop="@dimen/view_dimen_X_large"
+                tools:context=".ui.fragments.LoginFragment">
+
+    <TextView
+        android:id="@+id/textViewStatic_login_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/view_dimen_X2_large"
+        android:gravity="center"
+        android:text="@string/login"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_X3_large"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewStatic_login_heading"
+        android:layout_marginTop="@dimen/view_dimen_X_large"
+        android:textColorHint="@color/colorWhite"
+        android:theme="@style/TextInputLayout">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/editText_login_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/textEmail"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:textColor="@color/colorWhite"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_layout_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/view_dimen_large"
+        android:textColorHint="@color/colorWhite"
+        android:theme="@style/TextInputLayout">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/editText_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/textPassword"
+            android:inputType="textPassword"
+            android:textColor="@color/colorWhite"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_login_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_dimen_large"
+        android:layout_below="@id/input_layout_password"
+        android:layout_marginTop="@dimen/view_dimen_X_large"
+        android:background="@color/colorLight"
+        android:text="@string/button_text_login"
+        android:textColor="@color/colorSecondary"
+        android:textSize="@dimen/font_large"/>
+
+    <TextView
+        android:id="@+id/textView_login_forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_login_login"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/view_dimen_large"
+        android:gravity="center"
+        android:text="@string/forgot_password"
+        android:textColor="@color/colorLight"
+        android:textSize="@dimen/font_small"/>
+
+
+</RelativeLayout>

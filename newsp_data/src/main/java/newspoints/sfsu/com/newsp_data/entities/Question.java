@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Questions pertaining to an event or source configured while capturing {@link Audio} or {@link MyVideo}. Defines three
+ * Questions pertaining to an event or source configured while capturing {@link Audio} or {@link NPVideo}. Defines three
  * different properties {@code id}, {@code label} and {@code value}.
  * <p>
  * Directly maps to an XML file tag represented by Question

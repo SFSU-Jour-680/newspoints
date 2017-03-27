@@ -404,7 +404,7 @@ public class ExportXML {
 		child5.appendChild(text);
 		child4.appendChild(child5);
 		child5 = doc.createElement("name");
-		text = doc.createTextNode("MyVideo Recording " + recordingId + ".mp4");
+		text = doc.createTextNode("NPVideo Recording " + recordingId + ".mp4");
 		child5.appendChild(text);
 		child4.appendChild(child5);
 
@@ -797,12 +797,12 @@ public class ExportXML {
 		child1.setAttribute("id", "file- " + recordingId);
 
 		child2 = doc.createElement("name");
-		text = doc.createTextNode("MyVideo Recording " + recordingId + ".mp4");
+		text = doc.createTextNode("NPVideo Recording " + recordingId + ".mp4");
 		child2.appendChild(text);
 		child1.appendChild(child2);
 
 		child2 = doc.createElement("pathurl");
-		text = doc.createTextNode("Assests/" + "MyVideo Recording " + recordingId
+		text = doc.createTextNode("Assests/" + "NPVideo Recording " + recordingId
 				+ ".mp4");
 		child2.appendChild(text);
 		child1.appendChild(child2);

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_projectDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="@dimen/widget_dimen_X_large"
+            app:expandedTitleMarginStart="@dimen/widget_dimen_large"
+            app:expandedTitleTextAppearance="@style/CollapsingToolbarLayoutExpandedTextStyle"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/imageView_projDet_mainImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cardview_X2_large"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder_android_n"
+                app:layout_collapseMode="parallax"/>
+
+            <TextView
+                android:id="@+id/textView_projDet_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:layout_marginBottom="@dimen/view_dimen_large"
+                android:layout_marginStart="@dimen/view_dimen_large"
+                android:background="@color/colorSecondaryTemp"
+                android:padding="@dimen/view_dimen_X_small"
+                android:text="@string/text_projDet_category"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_X_small"
+                />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_projectDetail"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="none"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <!-- Contains the main content of user -->
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:fitsSystemWindows="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_projDet_projName"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/widget_dimen_large"
+                android:layout_marginStart="@dimen/view_dimen_large"
+                android:layout_marginTop="@dimen/view_dimen_small"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/text_projDet_name"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/font_X_large"
+                />
+
+            <TextView
+                android:id="@+id/textView_projDet_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_projDet_projName"
+                android:layout_marginEnd="@dimen/view_dimen_large"
+                android:layout_marginStart="@dimen/view_dimen_large"
+                android:text="@string/text_projDet_desc"
+                android:textColor="@color/textSecondary"
+                android:textSize="@dimen/font_small"/>
+
+            <ImageView
+                android:id="@+id/icon_projDet_videoLib"
+                android:layout_width="@dimen/widget_dimen_large"
+                android:layout_height="@dimen/widget_dimen_large"
+                android:layout_below="@id/textView_projDet_description"
+                android:layout_marginStart="@dimen/view_dimen_small"
+                android:layout_marginTop="@dimen/view_dimen_small"
+                android:padding="@dimen/view_dimen_medium"
+                android:src="@mipmap/ic_video_library_grey_600_24dp"/>
+
+            <TextView
+                android:id="@+id/textView_projDet_videoCount"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/widget_dimen_large"
+                android:layout_alignBottom="@id/icon_projDet_videoLib"
+                android:layout_marginEnd="@dimen/view_dimen_small"
+                android:layout_marginStart="@dimen/view_dimen_small"
+                android:layout_marginTop="@dimen/view_dimen_small"
+                android:layout_toEndOf="@id/icon_projDet_videoLib"
+                android:gravity="center_vertical"
+                android:text="@string/text_projDet_video"
+                android:textColor="@color/textSecondary"
+                android:textSize="@dimen/font_medium"/>
+
+            <ImageView
+                android:id="@+id/icon_projDet_audioLib"
+                android:layout_width="@dimen/widget_dimen_large"
+                android:layout_height="@dimen/widget_dimen_large"
+                android:layout_below="@id/icon_projDet_videoLib"
+                android:layout_marginStart="@dimen/view_dimen_small"
+                android:padding="@dimen/view_dimen_medium"
+                android:src="@mipmap/ic_library_music_grey_600_24dp"/>
+
+            <TextView
+                android:id="@+id/textView_projDet_audioCount"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/widget_dimen_large"
+                android:layout_alignBottom="@id/icon_projDet_audioLib"
+                android:layout_marginEnd="@dimen/view_dimen_small"
+                android:layout_marginStart="@dimen/view_dimen_small"
+                android:layout_toEndOf="@id/icon_projDet_audioLib"
+                android:gravity="center_vertical"
+                android:text="@string/text_projDet_audio"
+                android:textColor="@color/textSecondary"
+                android:textSize="@dimen/font_medium"/>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardview_tickGuide_detail_description"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cardview_small"
+                android:layout_below="@id/icon_projDet_audioLib"
+                android:layout_marginEnd="@dimen/view_dimen_small"
+                android:layout_marginStart="@dimen/view_dimen_small"
+                android:layout_marginTop="@dimen/view_dimen_large"
+                android:minHeight="@dimen/widget_dimen_X2_large"
+                android:padding="@dimen/view_dimen_large"
+                app:cardBackgroundColor="@color/colorSecondaryTemp"
+                app:cardCornerRadius="@dimen/view_dimen_X_small"
+                card_view:cardPreventCornerOverlap="false">
+
+                <TextView
+                    android:id="@+id/textViewStatic_projDet_cardMediaInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/view_dimen_large"
+                    android:text="Capture media"
+                    android:textColor="@color/textWhite"
+                    android:textSize="@dimen/font_X_small"/>
+
+                <!-- Height must be supplied for better positioning-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cardview_small"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/fab_projDet_captureVideo"
+                            android:layout_width="@dimen/dimen_material_large"
+                            android:layout_height="@dimen/dimen_material_large"
+                            android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:src="@mipmap/ic_videocam_black_24dp"
+                            app:backgroundTint="@color/colorWhite"/>
+
+                        <TextView
+                            android:id="@+id/textViewStatic_projDet_cardCaptureVideo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/widget_dimen_large"
+                            android:layout_below="@id/fab_projDet_captureVideo"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/view_dimen_medium"
+                            android:text="Record Video"
+                            android:textColor="@color/textWhite"
+                            android:textSize="@dimen/font_X_small"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/fab_projDet_captureAudio"
+                            android:layout_width="@dimen/dimen_material_large"
+                            android:layout_height="@dimen/dimen_material_large"
+                            android:layout_centerInParent="true"
+                            android:clickable="true"
+                            android:src="@mipmap/ic_mic_black_24dp"
+                            app:backgroundTint="@color/colorWhite"/>
+
+                        <TextView
+                            android:id="@+id/textViewStatic_projDet_cardCaptureAudio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/widget_dimen_large"
+                            android:layout_below="@id/fab_projDet_captureAudio"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/view_dimen_medium"
+                            android:text="Record Audio"
+                            android:textColor="@color/textWhite"
+                            android:textSize="@dimen/font_X_small"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

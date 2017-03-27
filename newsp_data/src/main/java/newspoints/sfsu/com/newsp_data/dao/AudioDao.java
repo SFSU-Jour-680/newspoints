@@ -11,10 +11,8 @@ import org.greenrobot.greendao.Property;
 import org.greenrobot.greendao.database.DatabaseStatement;
 import org.greenrobot.greendao.internal.DaoConfig;
 import org.greenrobot.greendao.internal.SqlUtils;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import newspoints.sfsu.com.newsp_data.entities.Audio;
 
 /**
@@ -124,7 +122,7 @@ public class AudioDao extends AbstractDao<Audio, Long> {
     }
 
     /**
-     * Builds MyVideo from the key using cursor
+     * Builds NPVideo from the key using cursor
      *
      * @param key
      * @return
@@ -154,7 +152,7 @@ public class AudioDao extends AbstractDao<Audio, Long> {
     }
 
     /**
-     * Reads all available rows from the given cursor and returns a list of MyVideo objects
+     * Reads all available rows from the given cursor and returns a list of NPVideo objects
      */
     private List<Audio> loadAllDeepFromCursor(Cursor cursor) {
         int count = cursor.getCount();
@@ -193,11 +191,11 @@ public class AudioDao extends AbstractDao<Audio, Long> {
     }
 
     /**
-     * A raw-style query where you can pass any WHERE clause and arguments to query MyVideo
+     * A raw-style query where you can pass any WHERE clause and arguments to query NPVideo
      *
      * @param where
      * @param selectionArg
-     * @return List of MyVideo
+     * @return List of NPVideo
      */
     public List<Audio> getAll(String where, String... selectionArg) {
         Cursor cursor = db.rawQuery(getSelectDeep() + where, selectionArg);

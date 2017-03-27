@@ -1,12 +1,12 @@
 package newspoints.sfsu.com.newsp_data.manager;
 
-import com.newspoints.journalist.entities.Audio;
-import com.newspoints.journalist.entities.MyEvent;
-import com.newspoints.journalist.entities.MyVideo;
-import com.newspoints.journalist.entities.Project;
-import com.newspoints.journalist.entities.User;
-
 import java.util.List;
+
+import newspoints.sfsu.com.newsp_data.entities.Audio;
+import newspoints.sfsu.com.newsp_data.entities.MyEvent;
+import newspoints.sfsu.com.newsp_data.entities.NPVideo;
+import newspoints.sfsu.com.newsp_data.entities.Project;
+import newspoints.sfsu.com.newsp_data.entities.User;
 
 /**
  * Interface that provides methods for managing the database inside the Application. All the methods for carrying out
@@ -66,20 +66,20 @@ public interface IDatabaseManager {
     /**
      * Insert a user into the DB
      *
-     * @param myVideo to be inserted
+     * @param NPVideo to be inserted
      */
-    public MyVideo insertVideo(MyVideo myVideo);
+    public NPVideo insertVideo(NPVideo NPVideo);
 
     /**
-     * Update a myVideo from the DB
+     * Update a NPVideo from the DB
      *
-     * @param myVideo to be updated
+     * @param NPVideo to be updated
      */
-    public void updateVideo(MyVideo myVideo);
+    public void updateVideo(NPVideo NPVideo);
 
 
     /**
-     * Delete a MyVideo with a certain id from the DB
+     * Delete a NPVideo with a certain id from the DB
      *
      * @param videoId of video to be deleted
      */
@@ -87,18 +87,18 @@ public interface IDatabaseManager {
 
 
     /**
-     * @param videoId - of the MyVideo we want to fetch
-     * @return Return a MyVideo by its id
+     * @param videoId - of the NPVideo we want to fetch
+     * @return Return a NPVideo by its id
      */
-    MyVideo getVideoById(Long videoId);
+    NPVideo getVideoById(Long videoId);
 
 
     /**
-     * List all the MyVideo from the DB
+     * List all the NPVideo from the DB
      *
      * @return list of videos
      */
-    public List<MyVideo> listVideos();
+    public List<NPVideo> listVideos();
 
 
     // ============================================ AUDIO ============================================
@@ -130,7 +130,7 @@ public interface IDatabaseManager {
      * @param audioId - of the Audio we want to fetch
      * @return Return a Audio by its id
      */
-    MyVideo getAudioById(Long audioId);
+    NPVideo getAudioById(Long audioId);
 
 
     /**
@@ -169,7 +169,7 @@ public interface IDatabaseManager {
      * @param projectId - of the Project we want to fetch
      * @return Return a Project by its id
      */
-    MyVideo getProjectById(Long projectId);
+    NPVideo getProjectById(Long projectId);
 
 
     /**
@@ -209,7 +209,7 @@ public interface IDatabaseManager {
      * @param eventId - of the Event we want to fetch
      * @return Return a Event by its id
      */
-    MyVideo getEventById(Long eventId);
+    NPVideo getEventById(Long eventId);
 
 
     /**

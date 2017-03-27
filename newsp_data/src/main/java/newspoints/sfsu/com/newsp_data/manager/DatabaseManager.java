@@ -5,15 +5,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.util.Log;
 
-import com.newspoints.journalist.database.DaoMaster;
-import com.newspoints.journalist.database.DaoSession;
-import com.newspoints.journalist.database.UserDao;
-import com.newspoints.journalist.entities.Audio;
-import com.newspoints.journalist.entities.MyEvent;
-import com.newspoints.journalist.entities.MyVideo;
-import com.newspoints.journalist.entities.Project;
-import com.newspoints.journalist.entities.User;
-
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -21,6 +12,14 @@ import de.greenrobot.dao.async.AsyncOperation;
 import de.greenrobot.dao.async.AsyncOperationListener;
 import de.greenrobot.dao.async.AsyncSession;
 import de.greenrobot.dao.query.QueryBuilder;
+import newspoints.sfsu.com.newsp_data.dao.DaoMaster;
+import newspoints.sfsu.com.newsp_data.dao.DaoSession;
+import newspoints.sfsu.com.newsp_data.dao.UserDao;
+import newspoints.sfsu.com.newsp_data.entities.Audio;
+import newspoints.sfsu.com.newsp_data.entities.MyEvent;
+import newspoints.sfsu.com.newsp_data.entities.NPVideo;
+import newspoints.sfsu.com.newsp_data.entities.Project;
+import newspoints.sfsu.com.newsp_data.entities.User;
 
 /**
  * Business layer for handling all the Database operations that contains all the operations, methods andrelated business logic
@@ -127,7 +126,7 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
             mHelper.onCreate(database);
             asyncSession.deleteAll(User.class);
             asyncSession.deleteAll(Audio.class);
-            asyncSession.deleteAll(MyVideo.class);
+            asyncSession.deleteAll(NPVideo.class);
             asyncSession.deleteAll(Project.class);
             asyncSession.deleteAll(MyEvent.class);
         } catch (Exception e) {
@@ -211,12 +210,12 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
     }
 
     @Override
-    public MyVideo insertVideo(MyVideo myVideo) {
+    public NPVideo insertVideo(NPVideo NPVideo) {
         return null;
     }
 
     @Override
-    public void updateVideo(MyVideo myVideo) {
+    public void updateVideo(NPVideo NPVideo) {
 
     }
 
@@ -226,12 +225,12 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
     }
 
     @Override
-    public MyVideo getVideoById(Long videoId) {
+    public NPVideo getVideoById(Long videoId) {
         return null;
     }
 
     @Override
-    public List<MyVideo> listVideos() {
+    public List<NPVideo> listVideos() {
         return null;
     }
 
@@ -251,7 +250,7 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
     }
 
     @Override
-    public MyVideo getAudioById(Long audioId) {
+    public NPVideo getAudioById(Long audioId) {
         return null;
     }
 
@@ -276,7 +275,7 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
     }
 
     @Override
-    public MyVideo getProjectById(Long projectId) {
+    public NPVideo getProjectById(Long projectId) {
         return null;
     }
 
@@ -301,7 +300,7 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
     }
 
     @Override
-    public MyVideo getEventById(Long eventId) {
+    public NPVideo getEventById(Long eventId) {
         return null;
     }
 
@@ -309,5 +308,6 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
     public List<MyEvent> listEvents() {
         return null;
     }
+
 
 }

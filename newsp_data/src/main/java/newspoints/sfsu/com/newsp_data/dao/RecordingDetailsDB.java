@@ -112,10 +112,11 @@ public class RecordingDetailsDB extends SQLiteOpenHelper {
                 null, null, null);
         try {
             c.moveToFirst();
+            // MOVE: this doenst belong here. Move to UI layer
             while (!c.isAfterLast() && c.getCount() != 0) {
-                IndexActivity.projectList.add(c.getString(1));
-                IndexActivity.projectImage.add(c.getString(3));
-                IndexActivity.projectDate.add(c.getString(4));
+//                IndexActivity.projectList.add(c.getString(1));
+//                IndexActivity.projectImage.add(c.getString(3));
+//                IndexActivity.projectDate.add(c.getString(4));
                 c.moveToNext();
             }
         } catch (Exception e) {
@@ -605,7 +606,9 @@ public class RecordingDetailsDB extends SQLiteOpenHelper {
         return "null";
     }
 
+    // MOVE: this doenst belong here. Move to UI layer
     // method to get the Location - Lat Long of the project
+    /*
     public List<CreateProjectActivity.LocationDetails> getLocationPoints() {
         SQLiteDatabase sqlLiteDatabase = this.getReadableDatabase();
         List<CreateProjectActivity.LocationDetails> latLongs = new ArrayList<>();
@@ -635,7 +638,7 @@ public class RecordingDetailsDB extends SQLiteOpenHelper {
             }
         }
         return latLongs;
-    }
+    }*/
 
 
     // helper methods to get the data fromDB for playing video

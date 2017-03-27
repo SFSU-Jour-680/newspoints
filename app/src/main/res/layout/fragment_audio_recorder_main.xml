@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    android:id="@+id/slidingLayout_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoDragView="@+id/linearLayout_dragView_container"
+    sothree:umanoOverlay="true"
+    sothree:umanoPanelHeight="@dimen/view_dimen_X_large"
+    sothree:umanoParallaxOffset="100dp"
+    sothree:umanoScrollableView="@+id/linearLayout_slidingPanel_attachedContents"
+    sothree:umanoShadowHeight="@dimen/view_dimen_X_small">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout_audioCapture"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.MediaCaptureActivity">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:fab="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+            <!-- Screen shot -->
+            <ImageView
+                android:id="@+id/imageView_audioCapture_screenshot"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cardview_X_large"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="@dimen/view_dimen_large"
+                android:layout_marginStart="@dimen/view_dimen_large"
+                android:layout_marginTop="@dimen/cardview_small"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder_screenshot"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageView_audioCapture_screenshot"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/view_dimen_small"
+                android:text="Click on image area to capture image"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/font_medium"/>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout_audio_controls"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/widget_dimen_X2_large"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorGray">
+
+                <TextView
+                    android:id="@+id/textViewStatic_audioCapture_source"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="@dimen/view_dimen_default"
+                    android:layout_marginTop="@dimen/view_dimen_X2_large"
+                    android:background="@color/colorSource"
+                    android:paddingEnd="@dimen/view_dimen_small"
+                    android:paddingStart="@dimen/view_dimen_small"
+                    android:text="Source"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_X_small"/>
+
+                <TextView
+                    android:id="@+id/textView_audioCapture_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/view_dimen_default"
+                    android:layout_marginTop="@dimen/view_dimen_X3_large"
+                    android:paddingEnd="@dimen/view_dimen_small"
+                    android:paddingStart="@dimen/view_dimen_small"
+                    android:text="00:05:36"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/font_large"/>
+
+            </RelativeLayout>
+
+            <!-- sources button -->
+            <com.getbase.floatingactionbutton.FloatingActionsMenu
+                android:id="@+id/fab_audioCapture_sources"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/relativeLayout_audio_controls"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="-32dp"
+                android:layout_marginEnd="@dimen/view_dimen_small"
+                fab:fab_addButtonColorNormal="@color/colorSource"
+                fab:fab_addButtonColorPressed="@color/colorSource"
+                fab:fab_addButtonPlusIconColor="@color/textWhite"
+                fab:fab_addButtonSize="mini"
+                fab:fab_labelStyle="@style/menu_labels_style">
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_source_addNew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorSource"
+                    fab:fab_colorPressed="@color/colorSource"
+                    fab:fab_icon="@mipmap/ic_library_add_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Add new Source"/>
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_source_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorSource"
+                    fab:fab_colorPressed="@color/colorSource"
+                    fab:fab_icon="@mipmap/ic_sources_account_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Neighbor"/>
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_source_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorSource"
+                    fab:fab_colorPressed="@color/colorSource"
+                    fab:fab_icon="@mipmap/ic_sources_account_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Police"/>
+
+            </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+            <!-- media button -->
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_audioCapture_media"
+                android:layout_width="@dimen/dimen_material_default"
+                android:layout_height="@dimen/dimen_material_default"
+                android:layout_alignTop="@id/relativeLayout_audio_controls"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-36dp"
+                fab:fab_colorNormal="@color/colorPrimary"
+                fab:fab_colorPressed="@color/colorPrimaryDark"/>
+
+            <FrameLayout
+                android:id="@+id/frameLayout_audioCapture_questions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="@dimen/view_dimen_large"
+                android:layout_marginTop="@dimen/view_dimen_large"
+                tools:ignore="RelativeOverlap">
+
+                <ImageView
+                    android:id="@+id/icon_audioCapture_questions"
+                    android:layout_width="@dimen/view_dimen_X1_large"
+                    android:layout_height="@dimen/view_dimen_X1_large"
+                    android:src="@mipmap/ic_question_answer_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/textView_audioCapture_questionsCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:background="@drawable/circle_background"
+                    android:clickable="false"
+                    android:paddingEnd="@dimen/view_dimen_X_small"
+                    android:paddingStart="@dimen/view_dimen_X_small"
+                    android:text="@string/text_questionsCount"
+                    android:textColor="@color/textWhite"
+                    android:textSize="@dimen/font_X1_small">
+                </TextView>
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <!-- ListView for Questions. Will open from Right to left-->
+        <ListView
+            android:id="@+id/listView_audioCapture_questionsData"
+            android:layout_width="@dimen/cardview_X1_large"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@color/colorGray"
+            android:divider="@android:color/transparent"
+            android:paddingBottom="@dimen/view_dimen_X1_large"/>
+
+
+    </android.support.v4.widget.DrawerLayout>
+
+    <!-- SLIDING LAYOUT -->
+    <include
+        android:id="@+id/linearLayout_dragView_container"
+        layout="@layout/layout_attached_contents"/>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

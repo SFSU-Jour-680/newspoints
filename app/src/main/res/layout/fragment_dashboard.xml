@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_dashboard_importXML"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cardview_default"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="@dimen/view_dimen_small"
+        android:layout_marginStart="@dimen/view_dimen_small"
+        android:layout_marginTop="@dimen/view_dimen_small"
+        android:background="@drawable/layout_rounded_corner">
+
+        <ImageView
+            android:id="@+id/imageView_dashboard_closeLayout"
+            android:layout_width="@dimen/view_dimen_small"
+            android:layout_height="@dimen/view_dimen_small"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="@dimen/view_dimen_small"
+            android:layout_marginTop="@dimen/view_dimen_small"
+            android:src="@mipmap/ic_cloud_download_white_24dp"/>
+
+        <TextView
+            android:id="@+id/textViewStatic_dashboard_createProj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/view_dimen_X_large"
+            android:text="Capture News events"
+            android:layout_marginStart="@dimen/view_dimen_large"
+            android:layout_marginEnd="@dimen/view_dimen_large"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_small"/>
+
+        <ImageView
+            android:id="@+id/imageView_dashboard_import"
+            android:layout_width="@dimen/widget_dimen_large"
+            android:layout_height="@dimen/widget_dimen_large"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/textViewStatic_dashboard_createProj"
+            android:src="@mipmap/ic_cloud_download_white_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView_dashboard_import"
+            android:layout_centerHorizontal="true"
+            android:text="@string/importXML"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_small"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_dashboard_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeLayout_dashboard_importXML"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_dashboard_captureMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/view_dimen_small"
+        android:layout_marginEnd="@dimen/view_dimen_small"
+        fab:fab_colorNormal="@color/colorPrimary"
+        fab:fab_colorPressed="@color/colorPrimaryDark"
+        fab:fab_icon="@mipmap/ic_add_white_36dp"/>
+</RelativeLayout>

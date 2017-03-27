@@ -24,6 +24,7 @@ public class DaoMaster extends AbstractDaoMaster {
         registerDaoClass(EventDao.class);
     }
 
+
     /**
      * Creates underlying database table using DAOs.
      */

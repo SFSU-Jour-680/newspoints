@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.fragments.HomeFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:background="@drawable/background3"/>
+
+    <ImageView
+        android:id="@+id/iconMain"
+        android:layout_width="@dimen/widget_dimen_X3_large"
+        android:layout_height="@dimen/widget_dimen_X3_large"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/widget_dimen_large"
+        android:src="@drawable/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/textView_home_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iconMain"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/view_dimen_large"
+        android:gravity="center"
+        android:paddingLeft="@dimen/view_dimen_large"
+        android:paddingRight="@dimen/view_dimen_large"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/font_X_large"/>
+
+    <!-- Login Button-->
+    <TextView
+        android:id="@+id/textView_home_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/view_dimen_X1_large"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+        android:gravity="center"
+        android:paddingBottom="@dimen/view_dimen_small"
+        android:paddingLeft="@dimen/widget_dimen_large"
+        android:paddingRight="@dimen/widget_dimen_large"
+        android:paddingTop="@dimen/view_dimen_small"
+        android:text="@string/home_button_login"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_large"/>
+
+    <!-- Register Button -->
+    <TextView
+        android:id="@+id/textView_home_signUp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/textView_home_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/view_dimen_large"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+        android:paddingBottom="@dimen/view_dimen_small"
+        android:paddingLeft="@dimen/widget_dimen_large"
+        android:paddingRight="@dimen/widget_dimen_large"
+        android:paddingTop="@dimen/view_dimen_small"
+        android:text="@string/register"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_large"
+        />
+
+
+</RelativeLayout>

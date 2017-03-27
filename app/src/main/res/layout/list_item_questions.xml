@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:card_view="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_questionItem_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_dimen_large"
+        android:layout_marginBottom="@dimen/view_dimen_small"
+        android:layout_marginEnd="@dimen/view_dimen_large"
+        android:layout_marginStart="@dimen/view_dimen_large"
+        android:layout_marginTop="@dimen/view_dimen_small"
+        android:minHeight="@dimen/widget_dimen_large"
+        android:padding="@dimen/view_dimen_large"
+        app:cardBackgroundColor="@color/colorPrimary_80_per"
+        app:cardCornerRadius="@dimen/view_dimen_X_small"
+        card_view:cardPreventCornerOverlap="false">
+
+        <TextView
+            android:id="@+id/textView_questionItem_questions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:gravity="center_vertical|start"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/view_dimen_X1_large"
+            android:paddingStart="@dimen/view_dimen_large"
+            android:text="Lets test Lets test Lets test Lets test lets"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_small"/>
+
+        <ImageView
+            android:id="@+id/icon_questionItem_tick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end|clip_vertical"
+            android:layout_marginEnd="@dimen/view_dimen_small"
+            android:src="@mipmap/ic_check_circle_white_24dp"
+            android:visibility="invisible"/>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

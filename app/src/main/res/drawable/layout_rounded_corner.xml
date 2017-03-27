@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- main background color -->
+    <solid
+        android:color="@color/colorPrimary">
+    </solid>
+
+    <!-- stroke for the layout shade effect-->
+    <stroke
+        android:width="2dp"
+        android:color="@color/colorLight">
+    </stroke>
+
+    <!-- main background corner-->
+    <padding
+        android:bottom="@dimen/view_dimen_X1_small"
+        android:left="@dimen/view_dimen_X1_small"
+        android:right="@dimen/view_dimen_X1_small"
+        android:top="@dimen/view_dimen_X1_small">
+    </padding>
+
+    <!-- corner width-->
+    <corners
+        android:radius="@dimen/view_dimen_small">
+    </corners>
+
+</shape>

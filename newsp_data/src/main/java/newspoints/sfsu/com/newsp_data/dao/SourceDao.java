@@ -2,11 +2,9 @@ package newspoints.sfsu.com.newsp_data.dao;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;
-
-import com.newspoints.journalist.entities.Source;
-
 import de.greenrobot.dao.AbstractDao;
 import de.greenrobot.dao.internal.DaoConfig;
+import newspoints.sfsu.com.newsp_data.entities.Source;
 
 /**
  * DAO to handle all the DB operations related to {@link Source}

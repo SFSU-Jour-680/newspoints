@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!-- RGB : (0,152,137) -->
+    <color name="colorPrimary">#009889</color>
+    <color name="colorPrimaryDark">#00796d</color>
+
+    <color name="colorSecondary">#1A237E</color>
+    <color name="colorSecondaryTemp">#212c5b</color>
+
+    <!-- Transparent colors; the <value>_per defines the transparent channel-->
+    <color name="colorPrimary_90_per">#1A009889</color>
+    <color name="colorPrimary_80_per">#33009889</color>
+    <color name="colorPrimary_70_per">#7F009889</color>
+    <color name="colorPrimary_50_per">#80009889</color>
+
+    <!-- colors for identifying resources-->
+    <color name="colorShot">#7B1FA2</color>
+    <color name="colorShotDark">#621881</color>
+    <color name="colorSource">#C2185B</color>
+    <color name="colorQuestion">#FF9800</color>
+
+    <color name="colorLight">#BDBDBD</color>
+    <color name="colorShade">#C4CDE0</color>
+
+    <color name="textLight">#BDBDBD</color>
+    <color name="textUltraLight">#efefef</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textMedium">#989898</color>
+    <color name="textSecondary">#727272</color>
+    <color name="textWhite">#fff</color>
+
+    <!-- FAB colors-->
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="background">#e5e5e5</color>
+    <color name="half_black">#808080</color>
+    <color name="white">#fafafa</color>
+    <color name="white_pressed">#f1f1f1</color>
+    <color name="pink">#e91e63</color>
+    <color name="pink_pressed">#ec407a</color>
+    <color name="blue_semi_transparent">#805677fc</color>
+    <color name="blue_semi_transparent_pressed">#80738ffe</color>
+
+    <!--White-->
+    <color name="colorWhite">#fff</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorGray">#3f3f3f</color>
 </resources>

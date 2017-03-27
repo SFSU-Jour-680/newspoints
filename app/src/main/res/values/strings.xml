@@ -1,3 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Title and Application wide namespaces-->
     <string name="app_name">Newspoints</string>
+    <string name="project_dir_name">journalists</string>
+
+    <!---->
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Main Activity</string>
+    <string name="title_activity_home">Home Activity</string>
+    <string name="title_activity_audio_recorder">Audio Recorder</string>
+    <string name="title_activity_video_recorder">Video Recorder</string>
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="title_activity_profile">Add New Project</string>
+    <string name="title_activity_exception_handler">ExceptionHandlerActivity</string>
+    <string name="title_activity_index">Project List</string>
+    <string name="title_activity_files_list">Files List</string>
+    <string name="title_activity_project_options">ProjectOptions</string>
+    <string name="title_activity_news_map_view_fragment">Projects Map</string>
+    <string name="title_activity_drive_upload">Drive Upload</string>
+    <string name="title_activity_media">All Media</string>
+    <string name="title_activity_dropbox_file_picker">Dropbox File Pick</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Fragments Title -->
+    <string name="title_fragment_dashboard">Dashboard</string>
+    <string name="title_fragment_project_list">My Projects</string>
+    <string name="titke_fragment_create_project">Create New Project</string>
+    <string name="title_fragment_edit_project">Edit Project</string>
+    <string name="title_fragment_project_details">Project Details</string>
+    <string name="title_fragment_user_profile">My Profile</string>
+    <string name="title_fragment_tutorial">Tutorial</string>
+    <string name="title_fragment_all_files">All Recordings</string>
+    <string name="title_fragment_drive_upload">Choose Cloud Storage</string>
+
+    <!-- Action items-->
+    <string name="cancel">@android:string/cancel</string>
+    <string name="ok">@android:string/ok</string>
+
+    <!-- Create Project -->
+    <string name="hint_projectName">E.g. Fire at Financial District</string>
+    <string name="hint_description">A short description</string>
+    <string name="hint_selectGuide">Select Guide</string>
+    <string name="button_createProject">Create Project</string>
+
+    <!-- Project Details-->
+    <string name="text_projDet_category">News</string>
+    <string name="text_projDet_name">Fire outside Golden Gate</string>
+    <string name="text_projDet_desc">This description is used to describe the contents of the project</string>
+    <string name="text_projDet_video">View 24 videos</string>
+    <string name="text_projDet_audio">View 14 audios</string>
+
+    <!-- Upload project-->
+    <string name="text_uploadProject_googleDrive">Upload to Google Drive</string>
+    <string name="text_uploadProject_dropbox">Upload to Dropbox</string>
+
+    <!-- MyVideo and Audio Recorder -->
+    <string name="text_shots">Shots</string>
+    <string name="text_sources">Sources</string>
+    <string name="text_questions">Questions</string>
+    <string name="text_dupeTime">05:14:36</string>
+    <string name="text_questionsCount">3</string>
+
+    <!-- Maps -->
+
+    <!-- Dashboard-->
+    <string name="importXML">Import Project XML file</string>
+
+    <!-- Login & Registration-->
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="textEmail">Email</string>
+    <string name="textPassword">Password</string>
+    <string name="textConfirmPassword">Confirm Password</string>
+    <string name="textEmailHint">E.g. john@doe.com</string>
+    <string name="textNameHint">E.g. Anderson Cooper</string>
+    <string name="header_resetPassword">Reset Password</string>
+    <string name="button_text_login">LOGIN</string>
+    <string name="button_text_register">REGISTER</string>
+    <string name="button_text_resetPassword">Send email to Reset Password</string>
+    <string name="forgot_password">Forgot Password? Click Here</string>
+    <string name="already_login">Already have an account? Log In</string>
+    <string name="privacyPolicy">I agree to Terms and Conditions</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Home -->
+    <string name="home_button_login">Log in</string>
+
+    <!-- Project List -->
+    <string name="projectList_info">No projects yet</string>
+
+    <!-- Nav drawer -->
+    <string name="nav_home">Home</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_projects">My Projects</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_tutorial">Tutorial</string>
+    <string name="nav_cloud">Cloud Storage</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_logout">Logout</string>
+    <string name="enable_gps">SWITCH ON</string>
+    <string name="openDrawer">OpenDrawer</string>
+    <string name="closeDrawer">closeDrawer</string>
+
+    <!--Dynamic Source/Questions-->
+    <string name="hint_tagCreateNewSource">Add a new Source</string>
+    <string name="hint_tagCreateNewQuestion">Add a new Question</string>
+    <string name="hint_infoHeaderSource">Choose new Source</string>
+    <string name="hint_infoHeaderQuestion">Choose new Question</string>
+    <string name="hint_infoSource">Select one of the Source(s) tags or create your own Source</string>
+    <string name="hint_infoQuestion">Select one or more Question(s) or create your own Question</string>
+    <string name="hint_infoSelectQuestion">Select one or more Question(s)</string>
+    <string name="hint_infoSelectSource">Select one or more Source(s)</string>
+
+
+    <!-- Menu options-->
+    <string name="menu_edit">Edit</string>
+    <string name="menu_done">Done</string>
+    <string name="menu_upload">Upload</string>
+    <string name="menu_search">Search</string>
+
+    <!-- Preferences file name -->
+    <string name="session_pref_file_name">SESSION_PREF_FILE</string>
+    <string name="perm_pref_file_name">PERMISSION_PREF_FILE</string>
+
+    <!-- Alert dialog boxes -->
+    <string name="alertDialog_projectImage_title">Choose Image</string>
+    <string name="alertDialog_projectImage_message">How do you want to select the project image?</string>
+    <string name="alertDialog_projectImage_gallery">Gallery</string>
+    <string name="alertDialog_projectImage_camera">Camera</string>
+    <string name="album_name">Newspoints</string>
+    <string name="title_activity_google_drive">GoogleDriveActivity</string>
+
 </resources>

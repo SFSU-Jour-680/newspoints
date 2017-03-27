@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    android:id="@+id/slidingLayout_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoDragView="@+id/linearLayout_dragView_container"
+    sothree:umanoOverlay="true"
+    sothree:umanoPanelHeight="@dimen/view_dimen_X_large"
+    sothree:umanoScrollableView="@+id/linearLayout_slidingPanel_attachedContents"
+    sothree:umanoShadowHeight="0dp">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout_videoCapture"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MediaCaptureActivity">
+
+        <!-- Container layout-->
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:fab="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="true"
+                        android:orientation="vertical">
+
+            <SurfaceView
+                android:id="@+id/surfaceView_video_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout_video_controls"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/widget_dimen_X2_large"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorGray">
+
+                <TextView
+                    android:id="@+id/textViewStatic_videoCapture_shot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="@dimen/view_dimen_small"
+                    android:layout_marginTop="@dimen/view_dimen_X2_large"
+                    android:background="@color/colorShot"
+                    android:paddingEnd="@dimen/view_dimen_small"
+                    android:paddingStart="@dimen/view_dimen_small"
+                    android:text="@string/text_shots"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_X_small"/>
+
+                <TextView
+                    android:id="@+id/textViewStatic_videoCapture_source"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="@dimen/view_dimen_small"
+                    android:layout_marginTop="@dimen/view_dimen_X2_large"
+                    android:background="@color/colorSource"
+                    android:paddingEnd="@dimen/view_dimen_small"
+                    android:paddingStart="@dimen/view_dimen_small"
+                    android:text="@string/text_sources"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_X_small"/>
+
+                <TextView
+                    android:id="@+id/textView_videoCapture_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginEnd="@dimen/view_dimen_default"
+                    android:layout_marginTop="@dimen/widget_dimen_small"
+                    android:paddingEnd="@dimen/view_dimen_small"
+                    android:paddingStart="@dimen/view_dimen_small"
+                    android:text="@string/text_dupeTime"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/font_large"/>
+
+            </RelativeLayout>
+
+            <!-- shots button -->
+            <com.getbase.floatingactionbutton.FloatingActionsMenu
+                android:id="@+id/fab_videoCapture_shot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/relativeLayout_video_controls"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="-32dp"
+                android:layout_marginStart="@dimen/view_dimen_small"
+                fab:fab_addButtonColorNormal="@color/colorShot"
+                fab:fab_addButtonColorPressed="@color/colorShotDark"
+                fab:fab_addButtonSize="mini"
+                fab:fab_labelStyle="@style/menu_labels_style"
+                fab:fab_labelsPosition="right">
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_shot_addNew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorShot"
+                    fab:fab_colorPressed="@color/colorShotDark"
+                    fab:fab_icon="@mipmap/ic_library_add_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Add new Shot"/>
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_shot_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorShot"
+                    fab:fab_colorPressed="@color/colorShotDark"
+                    fab:fab_icon="@mipmap/ic_comment_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Interview"/>
+
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_shot_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorShot"
+                    fab:fab_colorPressed="@color/colorShotDark"
+                    fab:fab_icon="@mipmap/ic_comment_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Medium"/>
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_shot_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorShot"
+                    fab:fab_colorPressed="@color/colorShotDark"
+                    fab:fab_icon="@mipmap/ic_comment_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="X-Close"/>
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_shot_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorShot"
+                    fab:fab_colorPressed="@color/colorShotDark"
+                    fab:fab_icon="@mipmap/ic_comment_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Reverse"/>
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_shot_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorShot"
+                    fab:fab_colorPressed="@color/colorShotDark"
+                    fab:fab_icon="@mipmap/ic_comment_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Wide"/>
+
+            </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+            <!-- sources button -->
+            <com.getbase.floatingactionbutton.FloatingActionsMenu
+                android:id="@+id/fab_videoCapture_sources"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/relativeLayout_video_controls"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="-32dp"
+                android:layout_marginEnd="@dimen/view_dimen_small"
+                fab:fab_addButtonColorNormal="@color/colorSource"
+                fab:fab_addButtonColorPressed="@color/colorSource"
+                fab:fab_addButtonPlusIconColor="@color/textWhite"
+                fab:fab_addButtonSize="mini"
+                fab:fab_labelStyle="@style/menu_labels_style">
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_source_addNew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorSource"
+                    fab:fab_colorPressed="@color/colorSource"
+                    fab:fab_icon="@mipmap/ic_library_add_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Add new Source"/>
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_source_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorSource"
+                    fab:fab_colorPressed="@color/colorSource"
+                    fab:fab_icon="@mipmap/ic_sources_account_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Witness"/>
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_source_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorSource"
+                    fab:fab_colorPressed="@color/colorSource"
+                    fab:fab_icon="@mipmap/ic_sources_account_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Protester"/>
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_source_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorSource"
+                    fab:fab_colorPressed="@color/colorSource"
+                    fab:fab_icon="@mipmap/ic_sources_account_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Neighbor"/>
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/action_source_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_colorNormal="@color/colorSource"
+                    fab:fab_colorPressed="@color/colorSource"
+                    fab:fab_icon="@mipmap/ic_sources_account_white_24dp"
+                    fab:fab_size="mini"
+                    fab:fab_title="Police"/>
+
+            </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+            <!-- media button -->
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_videoCapture_media"
+                android:layout_width="@dimen/dimen_material_default"
+                android:layout_height="@dimen/dimen_material_default"
+                android:layout_alignTop="@id/relativeLayout_video_controls"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-36dp"
+                fab:fab_colorNormal="@color/colorPrimary"
+                fab:fab_colorPressed="@color/colorPrimaryDark"/>
+
+            <!--<ImageView-->
+            <!--android:layout_width="@dimen/dimen_material_X_large"-->
+            <!--android:layout_height="@dimen/dimen_material_X_large"-->
+            <!--android:layout_alignTop="@id/relativeLayout_video_controls"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="-42dp"-->
+            <!--android:src="@mipmap/ic_fiber_manual_record_white_24dp"-->
+            <!--/>-->
+
+            <FrameLayout
+                android:id="@+id/frameLayout_videoCapture_questions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="@dimen/view_dimen_large"
+                android:layout_marginTop="@dimen/view_dimen_large"
+                android:paddingTop="@dimen/view_dimen_large"
+                tools:ignore="RelativeOverlap">
+
+                <ImageView
+                    android:id="@+id/icon_videoCapture_questions"
+                    android:layout_width="@dimen/view_dimen_X1_large"
+                    android:layout_height="@dimen/view_dimen_X1_large"
+                    android:src="@mipmap/ic_question_answer_white_24dp"/>
+
+                <TextView
+                    android:id="@+id/textView_videoCapture_questionsCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:background="@drawable/circle_background"
+                    android:clickable="false"
+                    android:paddingEnd="@dimen/view_dimen_X_small"
+                    android:paddingStart="@dimen/view_dimen_X_small"
+                    android:text="@string/text_questionsCount"
+                    android:textColor="@color/textWhite"
+                    android:textSize="@dimen/font_X1_small">
+                </TextView>
+            </FrameLayout>
+
+
+        </RelativeLayout>
+
+        <!-- ListView for Questions. Will open from Right to left-->
+        <ListView
+            android:id="@+id/listView_videoCapture_questionsData"
+            android:layout_width="@dimen/cardview_X1_large"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@color/colorGray"
+            android:divider="@android:color/transparent"/>
+
+    </android.support.v4.widget.DrawerLayout>
+
+    <!-- SLIDING LAYOUT -->
+    <include
+        android:id="@+id/linearLayout_dragView_container"
+        layout="@layout/layout_attached_contents"/>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

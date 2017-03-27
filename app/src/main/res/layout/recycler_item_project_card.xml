@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/cardView_projlistItem_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/view_dimen_small"
+    android:layout_marginStart="@dimen/view_dimen_small"
+    android:layout_marginTop="@dimen/view_dimen_small"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/view_dimen_large">
+
+        <TextView
+            android:id="@+id/textView_listItem_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_dimen_small"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/view_dimen_X2_large"
+            android:paddingStart="@dimen/view_dimen_medium"
+            android:text="Potrero fire shoot"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/font_large"
+            android:textStyle="bold"/>
+
+        <!-- Location components-->
+        <ImageView
+            android:id="@+id/icon_listItem_location"
+            android:layout_width="@dimen/view_dimen_default"
+            android:layout_height="@dimen/view_dimen_default"
+            android:layout_alignStart="@id/textView_listItem_header"
+            android:layout_below="@id/textView_listItem_header"
+            android:layout_marginStart="@dimen/view_dimen_small"
+            android:layout_marginTop="@dimen/view_dimen_X_small"
+            android:src="@mipmap/ic_location_on_grey_400_24dp"/>
+
+        <TextView
+            android:id="@+id/textView_listItem_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_listItem_header"
+            android:layout_marginStart="@dimen/view_dimen_X_small"
+            android:layout_marginTop="@dimen/view_dimen_X_small"
+            android:layout_toEndOf="@id/icon_listItem_location"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="San Francisco"
+            android:textColor="@color/textMedium"
+            android:textSize="@dimen/font_small"/>
+
+
+        <ImageView
+            android:id="@+id/imageView_listItem_cloudIcon"
+            android:layout_width="@dimen/view_dimen_X_large"
+            android:layout_height="@dimen/view_dimen_X_large"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="@dimen/view_dimen_large"
+            android:layout_marginTop="@dimen/view_dimen_small"
+            android:src="@drawable/gdrive_product128"
+            />
+
+        <!-- Main project image-->
+        <ImageView
+            android:id="@+id/imageView_listItem_projectImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cardview_large"
+            android:layout_below="@id/icon_listItem_location"
+            android:layout_marginTop="@dimen/view_dimen_large"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/placeholder_android_n"/>
+
+
+        <TextView
+            android:id="@+id/textView_listItem_dateAndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/imageView_listItem_projectImage"
+            android:layout_marginStart="@dimen/view_dimen_large"
+            android:layout_marginTop="@dimen/view_dimen_large"
+            android:text="Tuesday, March 22, 16:02"
+            android:textColor="@color/textSecondary"
+            android:textSize="@dimen/font_small"
+            android:textStyle="bold"/>
+
+        <View
+            android:id="@+id/separator_listItem_project"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/textView_listItem_dateAndTime"
+            android:layout_marginEnd="@dimen/view_dimen_small"
+            android:layout_marginStart="@dimen/view_dimen_small"
+            android:layout_marginTop="@dimen/view_dimen_large"
+            android:background="@color/background"/>
+
+
+        <!-- MyVideo components -->
+        <ImageView
+            android:id="@+id/icon_listIItem_videoCount"
+            android:layout_width="@dimen/view_dimen_X_large"
+            android:layout_height="@dimen/view_dimen_X_large"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/separator_listItem_project"
+            android:layout_marginStart="@dimen/view_dimen_large"
+            android:layout_marginTop="@dimen/view_dimen_large"
+            android:padding="0dp"
+            android:src="@mipmap/ic_videocam_grey_400_24dp"/>
+
+        <TextView
+            android:id="@+id/textView_listItem_videoCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/icon_listIItem_videoCount"
+            android:layout_below="@id/separator_listItem_project"
+            android:layout_marginStart="@dimen/view_dimen_X_small"
+            android:layout_marginTop="@dimen/view_dimen_large"
+            android:layout_toEndOf="@id/icon_listIItem_videoCount"
+            android:gravity="center_vertical"
+            android:text="14"
+            android:textColor="@color/textLight"
+            android:textSize="@dimen/font_small"
+            android:textStyle="bold"/>
+
+        <!-- Audio components-->
+        <ImageView
+            android:id="@+id/icon_listItem_audioCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/separator_listItem_project"
+            android:layout_marginStart="@dimen/view_dimen_large"
+            android:layout_marginTop="@dimen/view_dimen_large"
+            android:layout_toEndOf="@id/textView_listItem_videoCount"
+            android:src="@mipmap/ic_mic_grey_400_24dp"/>
+
+        <TextView
+            android:id="@+id/textView_listItem_audioCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/icon_listItem_audioCount"
+            android:layout_below="@id/separator_listItem_project"
+            android:layout_marginStart="@dimen/view_dimen_X_small"
+            android:layout_marginTop="@dimen/view_dimen_large"
+            android:layout_toEndOf="@id/icon_listItem_audioCount"
+            android:gravity="center_vertical"
+            android:text="10"
+            android:textColor="@color/textLight"
+            android:textSize="@dimen/font_small"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView_listItem_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/separator_listItem_project"
+            android:layout_marginEnd="@dimen/view_dimen_large"
+            android:layout_marginTop="@dimen/view_dimen_large"
+            android:background="@drawable/view_roundborder_background"
+            android:paddingBottom="@dimen/view_dimen_X_small"
+            android:paddingEnd="@dimen/view_dimen_small"
+            android:paddingStart="@dimen/view_dimen_small"
+            android:paddingTop="@dimen/view_dimen_X_small"
+            android:text="News"
+            android:textColor="@color/textSecondary"/>
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

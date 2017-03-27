@@ -4,7 +4,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
-import com.newspoints.journalist.entities.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +12,7 @@ import de.greenrobot.dao.AbstractDao;
 import de.greenrobot.dao.Property;
 import de.greenrobot.dao.internal.DaoConfig;
 import de.greenrobot.dao.internal.SqlUtils;
+import newspoints.sfsu.com.newsp_data.entities.User;
 
 /**
  * DAO layer for

@@ -51,8 +51,8 @@ public class ProjectConstants {
     public static Set<String> shots = new HashSet<>();
     public static Set<String> sources = new HashSet<>();
     public static Set<String> questions = new HashSet<>();
-    // MyVideo recording Prefix
-    public static String VIDEO_RECORDING_ID = "MyVideo Recording ";
+    // NPVideo recording Prefix
+    public static String VIDEO_RECORDING_ID = "NPVideo Recording ";
 
     public static Set<String> getShots() {
         shots.add("establishing");
