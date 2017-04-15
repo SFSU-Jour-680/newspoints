@@ -2,8 +2,7 @@ package newspoints.sfsu.com.newsp.listeners;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
-import com.newspoints.journalist.R;
+import newspoints.sfsu.com.newsp.R;
 
 /**
  * Custom Click Listener for RecyclerView or any other Template View that allows simple onclick listener callbacks without

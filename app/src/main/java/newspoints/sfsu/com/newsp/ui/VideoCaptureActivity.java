@@ -30,7 +30,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -47,6 +46,7 @@ import java.util.Set;
 
 import newspoints.sfsu.com.newsp.R;
 import newspoints.sfsu.com.newsp.util.ProjectConstants;
+import newspoints.sfsu.com.newsp_data.dao.RecordingDetailsDB;
 
 public class VideoCaptureActivity extends AppCompatActivity implements SurfaceHolder.Callback, OnClickListener, PictureCallback {
 
@@ -85,6 +85,7 @@ public class VideoCaptureActivity extends AppCompatActivity implements SurfaceHo
     String recordingId;
     Set source, question, shot;
     int count = 0;
+    private RecordingDetailsDB dbClass;
 
     String categorySelected;
     Handler timerHandler = new Handler();
@@ -127,6 +128,8 @@ public class VideoCaptureActivity extends AppCompatActivity implements SurfaceHo
         source = new HashSet<>();
         question = new HashSet<>();
         ans1 = ans2 = ans3 = ans4 = ans5 = "";
+
+        dbClass = new RecordingDetailsDB(this);
 
         // mediaRecorder = new MediaRecorder();
         // initMediaRecorder();
@@ -483,13 +486,13 @@ public class VideoCaptureActivity extends AppCompatActivity implements SurfaceHo
             String formattedDate = df.format(new Date());
             if (!eventID.contains("404")) {
                 if (hours == 0) {
-                    ProjectConstants.dbClass.recordingDetails(selectedProject,
+                    dbClass.recordingDetails(selectedProject,
                             "" + recordingId, minutes + ":" + seconds, eventID,
                             "video", imagePath, recordingDuration,
                             formattedDate);
 
                 } else {
-                    ProjectConstants.dbClass.recordingDetails(selectedProject,
+                    dbClass.recordingDetails(selectedProject,
                             "" + recordingId, "" + hours + ":" + minutes + ":"
                                     + seconds, eventID, "video", imagePath,
                             recordingDuration, formattedDate);
@@ -497,13 +500,13 @@ public class VideoCaptureActivity extends AppCompatActivity implements SurfaceHo
                 }
             } else {
                 if (hours == 0) {
-                    ProjectConstants.dbClass.recordingDetails(selectedProject,
+                    dbClass.recordingDetails(selectedProject,
                             "" + recordingId, minutes + ":" + seconds, eventID,
                             "video", imagePath, recordingDuration,
                             formattedDate);
 
                 } else {
-                    ProjectConstants.dbClass.recordingDetails(selectedProject,
+                    dbClass.recordingDetails(selectedProject,
                             "" + recordingId, "" + hours + ":" + minutes + ":"
                                     + seconds, eventID, "video", imagePath,
                             recordingDuration, formattedDate);
@@ -674,8 +677,7 @@ public class VideoCaptureActivity extends AppCompatActivity implements SurfaceHo
             lastEndDate = date1;
             String selectedProject = ProjectConstants.selectedProjectName;
 
-            String tempRecordingId = ProjectConstants.dbClass
-                    .getLastRecordingId(selectedProject, "video");
+            String tempRecordingId = dbClass.getLastRecordingId(selectedProject, "video");
 
             if (tempRecordingId == null || tempRecordingId.equals("")
                     || tempRecordingId.equals("null")) {

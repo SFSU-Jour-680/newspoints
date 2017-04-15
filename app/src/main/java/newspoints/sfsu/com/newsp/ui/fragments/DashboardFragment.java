@@ -77,10 +77,10 @@ public class DashboardFragment extends Fragment {
         relativeLayout_importXML.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent filePickerIntent = new Intent(mContext, MyFilePickerActivity.class);
-                filePickerIntent.setAction(Intent.ACTION_GET_CONTENT);
-                filePickerIntent.putExtra(FilePickerActivity.EXTRA_MODE, AbstractFilePickerFragment.MODE_FILE);
-                startActivityForResult(filePickerIntent, CODE_SD);
+//                Intent filePickerIntent = new Intent(mContext, MyFilePickerActivity.class);
+//                filePickerIntent.setAction(Intent.ACTION_GET_CONTENT);
+//                filePickerIntent.putExtra(FilePickerActivity.EXTRA_MODE, AbstractFilePickerFragment.MODE_FILE);
+//                startActivityForResult(filePickerIntent, CODE_SD);
             }
         });
 

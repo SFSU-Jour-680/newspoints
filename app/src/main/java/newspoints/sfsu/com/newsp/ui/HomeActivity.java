@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import newspoints.sfsu.com.newsp.R;
+import newspoints.sfsu.com.newsp.session.SessionManager;
 import newspoints.sfsu.com.newsp.ui.fragments.HomeFragment;
 import newspoints.sfsu.com.newsp.ui.fragments.LoginFragment;
 import newspoints.sfsu.com.newsp.ui.fragments.LogoutFragment;
@@ -15,8 +16,8 @@ import newspoints.sfsu.com.newsp.ui.fragments.PasswordResetFragment;
 import newspoints.sfsu.com.newsp.ui.fragments.RegisterFragment;
 
 /**
- * HomeActivity is the container Activity for {@link com.newspoints.journalist.ui.fragments.LoginFragment} and {@link com.newspoints.journalist.ui.fragments.RegisterFragment}. Both these Fragments are displayed when the user first opens the app for the first time. Upon
- * successful registration, login the user is redirected to the {@link com.newspoints.journalist.ui.fragments.DashboardFragment}
+ * HomeActivity is the container Activity for {@link LoginFragment} and {@link RegisterFragment}. Both these Fragments are displayed when the user first opens the app for the first time. Upon
+ * successful registration, login the user is redirected to the {@link newspoints.sfsu.com.newsp.ui.fragments.DashboardFragment}
  */
 public class HomeActivity extends AppCompatActivity
         implements HomeFragment.IHomeCallbacks,

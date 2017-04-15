@@ -12,7 +12,7 @@ import newspoints.sfsu.com.newsp.ui.fragments.DashboardFragment;
 
 
 /**
- * Container activity for {@link com.newspoints.journalist.ui.fragments.DashboardFragment}. This activity will be displayed
+ * Container activity for {@link DashboardFragment}. This activity will be displayed
  * when the user open the application after registration/login.
  */
 public class MainActivity extends MainBaseActivity implements DashboardFragment.IDashboardCallbacks {

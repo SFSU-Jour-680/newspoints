@@ -1,6 +1,5 @@
 package newspoints.sfsu.com.newsp.ui;
 
-
 import android.app.AlertDialog;
 import android.app.SearchManager;
 import android.app.SearchableInfo;
@@ -45,8 +44,13 @@ import newspoints.sfsu.com.newsp.adapters.ViewPagerAdapter;
 import newspoints.sfsu.com.newsp.ui.fragments.ContentMainFragment;
 import newspoints.sfsu.com.newsp.util.ProjectConstants;
 import newspoints.sfsu.com.newsp_data.dao.RecordingDetailsDB;
+import newspoints.sfsu.com.newsp_data.entities.RecordingDetails;
 
-public class IndexActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, ContentMainFragment.IProjectSelectedListener, ViewPager.OnPageChangeListener, LocationListener {
+
+public class IndexActivity extends AppCompatActivity implements SearchView.OnQueryTextListener,
+        ContentMainFragment.IProjectSelectedListener,
+        ViewPager.OnPageChangeListener,
+        LocationListener {
 
     public static Context context;
     public static List<String> projectList, projectImage, projectDate;
@@ -62,6 +66,7 @@ public class IndexActivity extends AppCompatActivity implements SearchView.OnQue
     SearchView searchView;
     private ContentMainFragment mContentMainFragment;
     private TabHost tHost;
+    private RecordingDetailsDB dbClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +93,7 @@ public class IndexActivity extends AppCompatActivity implements SearchView.OnQue
             editor = prefs.edit();
         }
 
-        ProjectConstants.dbClass = new RecordingDetailsDB(context);
+        dbClass = new RecordingDetailsDB(context);
 
         // will add tabs to the IndexActivity
         addTabs();
@@ -100,7 +105,6 @@ public class IndexActivity extends AppCompatActivity implements SearchView.OnQue
                     viewPager.setCurrentItem(tHost.getCurrentTab());
                 }
             });
-
         } catch (Exception e) {
             Log.d("=====>", e.getMessage());
         }
@@ -484,7 +488,7 @@ public class IndexActivity extends AppCompatActivity implements SearchView.OnQue
         projectImage = new ArrayList<String>();
         projectDate = new ArrayList<String>();
 
-        ProjectConstants.dbClass.getProjectDetails();
+        dbClass.getProjectDetails();
 
         // add all the lists to the ListProjectDetails
         listProjectDetails.add(projectList);

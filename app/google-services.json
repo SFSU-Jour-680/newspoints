@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "541775291554",
+    "project_id": "newspoints-android"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541775291554:android:075e9982ccb833f2",
+        "android_client_info": {
+          "package_name": "newspoints.sfsu.com.newsp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHHS46SaZ3ZTHF3w15VwOTdOKTj-V2Lec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-97432967-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
