@@ -16,8 +16,10 @@ import newspoints.sfsu.com.newsp.ui.fragments.PasswordResetFragment;
 import newspoints.sfsu.com.newsp.ui.fragments.RegisterFragment;
 
 /**
- * HomeActivity is the container Activity for {@link LoginFragment} and {@link RegisterFragment}. Both these Fragments are displayed when the user first opens the app for the first time. Upon
- * successful registration, login the user is redirected to the {@link newspoints.sfsu.com.newsp.ui.fragments.DashboardFragment}
+ * HomeActivity is the container Activity for {@link LoginFragment} and {@link RegisterFragment}.
+ * Both these Fragments are displayed when the user first opens the app for the first time.
+ * Upon successful registration, login the user is redirected to the
+ * {@link newspoints.sfsu.com.newsp.ui.fragments.DashboardFragment}
  */
 public class HomeActivity extends AppCompatActivity
         implements HomeFragment.IHomeCallbacks,
@@ -38,7 +40,6 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
 
         fragmentManager = getSupportFragmentManager();
-
         mSessionManager = new SessionManager(this);
 
         // if Fragment container is present
@@ -67,7 +68,6 @@ public class HomeActivity extends AppCompatActivity
         }
     }
 
-    // TODO: change the intent
     private void displaySplashScreen() {
         startActivity(new Intent(HomeActivity.this, MainActivity.class));
         finish();
