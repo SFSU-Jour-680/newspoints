@@ -5,4 +5,5 @@
     <string name="KEY_CRASHLYTICS">96ee1bb9da860b653d3c7352c492e9f7bbf2b7cf</string>
     <string name="KEY_Google_Maps">AIzaSyCPCg0dTmScHS3b-jZn7Gdbz-mAGI69OzY</string>
     <string name="ga_trackingId">UA-97432967-1</string>
+    <string name="some_other_key">DEMO</string>
 </resources>
