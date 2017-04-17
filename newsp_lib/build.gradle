@@ -13,7 +13,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
     // google play services
     compile 'com.google.android.gms:play-services-drive:10.2.1'
     compile 'com.google.android.gms:play-services-maps:10.2.1'
@@ -44,5 +43,7 @@ dependencies {
     compile 'com.google.guava:guava:20.0'
     compile 'org.apmem.tools:layouts:1.10@aar'
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.7@aar') {
+        transitive = true;
+    }
 }
-

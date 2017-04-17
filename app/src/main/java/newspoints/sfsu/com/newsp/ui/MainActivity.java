@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 import newspoints.sfsu.com.newsp.R;
 import newspoints.sfsu.com.newsp.ui.fragments.DashboardFragment;
 
@@ -24,6 +26,7 @@ public class MainActivity extends MainBaseActivity implements DashboardFragment.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
 
         try {
