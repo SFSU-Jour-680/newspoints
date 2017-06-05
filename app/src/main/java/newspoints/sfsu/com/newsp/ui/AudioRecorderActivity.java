@@ -50,7 +50,7 @@ public class AudioRecorderActivity extends Activity implements OnClickListener {
     String picturePath;
     Boolean recording = false;
     File myStorageDir, newFileAfterPause;
-    String sourceName = "SourceName", angleName = "Angle", type = "Audio", lastEndTime = null, endTime;
+    String sourceName = "SourceName", angleName = "Angle", type = "NPAudio", lastEndTime = null, endTime;
     Date lastEndDate, endDate;
     long startTime = 0;
     Editor edit;
@@ -309,13 +309,13 @@ public class AudioRecorderActivity extends Activity implements OnClickListener {
                     + "/" + ProjectConstants.selectedProjectCategory + "/");
 
         }
-        newFileAfterPause = new File(myStorageDir + "/Audio Recording" + count
+        newFileAfterPause = new File(myStorageDir + "/NPAudio Recording" + count
                 + ".mp3");
 
         audioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         audioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         audioRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
-        audioRecorder.setOutputFile(myStorageDir + "/Audio Recording" + count
+        audioRecorder.setOutputFile(myStorageDir + "/NPAudio Recording" + count
                 + ".mp3");
 
     }
@@ -514,7 +514,7 @@ public class AudioRecorderActivity extends Activity implements OnClickListener {
             stop.setBackgroundResource(R.mipmap.ic_play_36);
             recording = false;
             pauseCount++;
-            newFileAfterPause.renameTo(new File(myStorageDir + "/" + "Audio Recording " + recordingId + ".mp3"));
+            newFileAfterPause.renameTo(new File(myStorageDir + "/" + "NPAudio Recording " + recordingId + ".mp3"));
             String eventID = prefs.getString(CURRENT_EVENT, "404");
 
             audioRecorder.reset();

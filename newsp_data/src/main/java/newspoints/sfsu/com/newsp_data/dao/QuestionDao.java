@@ -3,10 +3,11 @@ package newspoints.sfsu.com.newsp_data.dao;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;
 
-import com.newspoints.journalist.entities.Question;
+import org.greenrobot.greendao.AbstractDao;
+import org.greenrobot.greendao.database.DatabaseStatement;
+import org.greenrobot.greendao.internal.DaoConfig;
 
-import de.greenrobot.dao.AbstractDao;
-import de.greenrobot.dao.internal.DaoConfig;
+import newspoints.sfsu.com.newsp_data.entities.Question;
 
 /**
  * DAO to handle all the DB operations related to {@link Question}
@@ -44,6 +45,11 @@ public class QuestionDao extends AbstractDao<Question, Integer> {
     }
 
     @Override
+    protected void bindValues(DatabaseStatement stmt, Question entity) {
+
+    }
+
+    @Override
     protected void bindValues(SQLiteStatement stmt, Question entity) {
 
     }
@@ -56,6 +62,11 @@ public class QuestionDao extends AbstractDao<Question, Integer> {
     @Override
     protected Integer getKey(Question entity) {
         return null;
+    }
+
+    @Override
+    protected boolean hasKey(Question entity) {
+        return false;
     }
 
     @Override

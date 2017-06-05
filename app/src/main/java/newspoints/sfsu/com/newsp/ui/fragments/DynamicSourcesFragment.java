@@ -32,7 +32,7 @@ import newspoints.sfsu.com.newsp.util.ProjectConstants;
 import newspoints.sfsu.com.newsp_lib.event.SourcesEvent;
 
 /**
- * Allows user to choose from many default or create new Source Tags that can be attached to the Video/Audio and finally can be
+ * Allows user to choose from many default or create new Source Tags that can be attached to the Video/NPAudio and finally can be
  * exported to the XML
  */
 public class DynamicSourcesFragment extends Fragment implements View.OnClickListener {

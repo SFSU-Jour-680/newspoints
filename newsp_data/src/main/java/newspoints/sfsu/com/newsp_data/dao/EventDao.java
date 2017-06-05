@@ -1,14 +1,15 @@
 package newspoints.sfsu.com.newsp_data.dao;
 
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
-import com.newspoints.journalist.entities.MyEvent;
+import org.greenrobot.greendao.AbstractDao;
+import org.greenrobot.greendao.Property;
+import org.greenrobot.greendao.database.Database;
+import org.greenrobot.greendao.database.DatabaseStatement;
+import org.greenrobot.greendao.internal.DaoConfig;
 
-import de.greenrobot.dao.AbstractDao;
-import de.greenrobot.dao.Property;
-import de.greenrobot.dao.internal.DaoConfig;
+import newspoints.sfsu.com.newsp_data.entities.MyEvent;
 
 /**
  *
@@ -25,11 +26,11 @@ public class EventDao extends AbstractDao<MyEvent, Long> {
         this.mDaoSession = daoSession;
     }
 
-    public static void createTable(SQLiteDatabase db, boolean ifNotExists) {
+    public static void createTable(Database db, boolean ifNotExists) {
 
     }
 
-    public static void dropTable(SQLiteDatabase db, boolean ifExists) {
+    public static void dropTable(Database db, boolean ifExists) {
     }
 
     @Override
@@ -47,6 +48,11 @@ public class EventDao extends AbstractDao<MyEvent, Long> {
     }
 
     @Override
+    protected void bindValues(DatabaseStatement stmt, MyEvent entity) {
+
+    }
+
+    @Override
     protected void bindValues(SQLiteStatement stmt, MyEvent entity) {
     }
 
@@ -58,6 +64,11 @@ public class EventDao extends AbstractDao<MyEvent, Long> {
     @Override
     protected Long getKey(MyEvent entity) {
         return null;
+    }
+
+    @Override
+    protected boolean hasKey(MyEvent entity) {
+        return false;
     }
 
     @Override

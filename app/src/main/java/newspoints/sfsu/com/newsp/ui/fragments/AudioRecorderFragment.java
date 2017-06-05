@@ -36,7 +36,7 @@ import newspoints.sfsu.com.newsp.ui.MediaCaptureActivity;
 import newspoints.sfsu.com.newsp_lib.bus.BusProvider;
 
 /**
- * Allows user to record Audio and attach Questions, sources and Shots with it. Also enables user to view all the attached
+ * Allows user to record NPAudio and attach Questions, sources and Shots with it. Also enables user to view all the attached
  * media
  */
 public class AudioRecorderFragment extends Fragment {
@@ -82,7 +82,7 @@ public class AudioRecorderFragment extends Fragment {
     }
 
     /**
-     * Static method to add Sources or Questions to Audio
+     * Static method to add Sources or Questions to NPAudio
      *
      * @param key
      * @param selectedTagsList
@@ -319,12 +319,12 @@ public class AudioRecorderFragment extends Fragment {
      */
     public interface IAudioRecorderCallbacks {
         /**
-         * Callback method to attach user selected Sources to Audio
+         * Callback method to attach user selected Sources to NPAudio
          */
         void attachSourcesToAudioDynamically();
 
         /**
-         * Callback method to attach user selected Questions to Audio
+         * Callback method to attach user selected Questions to NPAudio
          */
         void attachQuestionsToAudioDynamically();
     }

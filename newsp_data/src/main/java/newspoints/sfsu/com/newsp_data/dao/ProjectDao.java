@@ -1,19 +1,21 @@
 package newspoints.sfsu.com.newsp_data.dao;
 
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
 import com.google.common.base.Preconditions;
-import com.newspoints.journalist.entities.Project;
+
+import org.greenrobot.greendao.AbstractDao;
+import org.greenrobot.greendao.Property;
+import org.greenrobot.greendao.database.Database;
+import org.greenrobot.greendao.database.DatabaseStatement;
+import org.greenrobot.greendao.internal.DaoConfig;
+import org.greenrobot.greendao.internal.SqlUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import de.greenrobot.dao.AbstractDao;
-import de.greenrobot.dao.Property;
-import de.greenrobot.dao.internal.DaoConfig;
-import de.greenrobot.dao.internal.SqlUtils;
+import newspoints.sfsu.com.newsp_data.entities.Project;
 
 /**
  * Defines all the {@link Project} based DAO operations such as CREATE, GET, INSERT and UPDATE
@@ -40,7 +42,7 @@ public class ProjectDao extends AbstractDao<Project, Long> {
      * @param db
      * @param ifNotExists
      */
-    public static void createTable(SQLiteDatabase db, boolean ifNotExists) {
+    public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists ? "IF NOT EXISTS " : "";
         db.execSQL("CREATE TABLE " + constraint + "\"" + TABLENAME + "\" (" +
                 "\"" + Properties.Id.columnName + "\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
@@ -60,7 +62,7 @@ public class ProjectDao extends AbstractDao<Project, Long> {
      * @param db
      * @param ifExists
      */
-    public static void dropTable(SQLiteDatabase db, boolean ifExists) {
+    public static void dropTable(Database db, boolean ifExists) {
         String sql = "DROP TABLE " + (ifExists ? "IF EXISTS " : "") + "\"" + TABLENAME + "\"";
         db.execSQL(sql);
     }
@@ -99,6 +101,11 @@ public class ProjectDao extends AbstractDao<Project, Long> {
     }
 
     @Override
+    protected void bindValues(DatabaseStatement stmt, Project entity) {
+
+    }
+
+    @Override
     protected void bindValues(SQLiteStatement stmt, Project entity) {
         stmt.clearBindings();
 
@@ -130,6 +137,11 @@ public class ProjectDao extends AbstractDao<Project, Long> {
         } else {
             return null;
         }
+    }
+
+    @Override
+    protected boolean hasKey(Project entity) {
+        return false;
     }
 
     @Override

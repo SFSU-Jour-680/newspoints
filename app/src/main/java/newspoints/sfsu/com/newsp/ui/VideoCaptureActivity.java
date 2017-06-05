@@ -71,7 +71,7 @@ public class VideoCaptureActivity extends AppCompatActivity implements SurfaceHo
     Boolean recordingState;
     long startTime = 0;
     SurfaceView myVideoView;
-    String sourceName = "SourceName", angleName = "Angle", type = "Audio", lastEndTime = null, endTime;
+    String sourceName = "SourceName", angleName = "Angle", type = "NPAudio", lastEndTime = null, endTime;
     Date lastEndDate, endDate;
     int hours, minutes, seconds;
     int recordingHour = 0, recordingMinute = 0, recordingSeconds;

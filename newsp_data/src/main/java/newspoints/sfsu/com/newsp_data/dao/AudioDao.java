@@ -1,37 +1,41 @@
 package newspoints.sfsu.com.newsp_data.dao;
 
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
 import com.google.common.base.Preconditions;
 
 import org.greenrobot.greendao.AbstractDao;
 import org.greenrobot.greendao.Property;
+import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.database.DatabaseStatement;
 import org.greenrobot.greendao.internal.DaoConfig;
 import org.greenrobot.greendao.internal.SqlUtils;
 import java.util.ArrayList;
 import java.util.List;
-import newspoints.sfsu.com.newsp_data.entities.Audio;
+import newspoints.sfsu.com.newsp_data.entities.NPAudio;
 
 /**
- * Dao for {@link Audio} entity. Contains the required methods to carry out all the operations related to Audio
+ * Dao for {@link NPAudio} entity. Contains the required methods to carry out all the operations related to NPAudio
  * <p>
  * Created by Pavitra on 2/18/2016.
  */
-public class AudioDao extends AbstractDao<Audio, Long> {
+public class AudioDao extends AbstractDao<NPAudio, Long> {
 
     public static final String TABLENAME = "NEWSP_AUDIO";
-    private DaoSession daoSession;
+    private DaoSession mDaoSession;
     private String selectDeep;
 
     public AudioDao(DaoConfig config) {
         super(config);
     }
 
+    public AudioDao(DaoConfig config, DaoSession daoSession) {
+        super(config);
+        this.mDaoSession = daoSession;
+    }
 
-    public static void createTable(SQLiteDatabase db, boolean ifNotExists) {
+    public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists ? "IF NOT EXISTS " : "";
         db.execSQL("CREATE TABLE " + constraint + "'" + TABLENAME + "' (" + //
                 "\"" + Properties.Id.columnName + "\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
@@ -43,13 +47,13 @@ public class AudioDao extends AbstractDao<Audio, Long> {
 
     }
 
-    public static void dropTable(SQLiteDatabase db, boolean ifExists) {
+    public static void dropTable(Database db, boolean ifExists) {
         String sql = "DROP TABLE " + (ifExists ? "IF EXISTS " : "") + "'" + TABLENAME + "'";
         db.execSQL(sql);
     }
 
     @Override
-    protected Audio readEntity(Cursor cursor, int offset) {
+    protected NPAudio readEntity(Cursor cursor, int offset) {
         return null;
     }
 
@@ -59,7 +63,7 @@ public class AudioDao extends AbstractDao<Audio, Long> {
     }
 
     @Override
-    protected void readEntity(Cursor cursor, Audio entity, int offset) {
+    protected void readEntity(Cursor cursor, NPAudio entity, int offset) {
         entity.setId(cursor.isNull(offset) ? null : cursor.getLong(offset));
         entity.setName(cursor.getString(offset + 1));
         entity.setStartTime(cursor.getInt(offset + 2));
@@ -69,12 +73,12 @@ public class AudioDao extends AbstractDao<Audio, Long> {
     }
 
     @Override
-    protected void bindValues(DatabaseStatement stmt, Audio entity) {
+    protected void bindValues(DatabaseStatement stmt, NPAudio entity) {
 
     }
 
     @Override
-    protected void bindValues(SQLiteStatement stmt, Audio entity) {
+    protected void bindValues(SQLiteStatement stmt, NPAudio entity) {
         stmt.clearBindings();
 
         Long id = entity.getId();
@@ -89,13 +93,13 @@ public class AudioDao extends AbstractDao<Audio, Long> {
     }
 
     @Override
-    protected Long updateKeyAfterInsert(Audio entity, long rowId) {
+    protected Long updateKeyAfterInsert(NPAudio entity, long rowId) {
         entity.setId(rowId);
         return rowId;
     }
 
     @Override
-    protected Long getKey(Audio entity) {
+    protected Long getKey(NPAudio entity) {
         if (entity != null) {
             return entity.getId();
         } else {
@@ -104,7 +108,7 @@ public class AudioDao extends AbstractDao<Audio, Long> {
     }
 
     @Override
-    protected boolean hasKey(Audio entity) {
+    protected boolean hasKey(NPAudio entity) {
         return false;
     }
 
@@ -114,8 +118,8 @@ public class AudioDao extends AbstractDao<Audio, Long> {
     }
 
 
-    protected Audio loadCurrentDeep(Cursor cursor, boolean lock) {
-        Audio mAudio = loadCurrent(cursor, 0, lock);
+    protected NPAudio loadCurrentDeep(Cursor cursor, boolean lock) {
+        NPAudio mAudio = loadCurrent(cursor, 0, lock);
         // offset by which the cursor builds Object
         int offset = getAllColumns().length;
         return mAudio;
@@ -127,7 +131,7 @@ public class AudioDao extends AbstractDao<Audio, Long> {
      * @param key
      * @return
      */
-    public Audio loadDeep(Long key) {
+    public NPAudio loadDeep(Long key) {
         assertSinglePk();
         if (key == null) {
             return null;
@@ -154,9 +158,9 @@ public class AudioDao extends AbstractDao<Audio, Long> {
     /**
      * Reads all available rows from the given cursor and returns a list of NPVideo objects
      */
-    private List<Audio> loadAllDeepFromCursor(Cursor cursor) {
+    private List<NPAudio> loadAllDeepFromCursor(Cursor cursor) {
         int count = cursor.getCount();
-        List<Audio> list = new ArrayList<Audio>(count);
+        List<NPAudio> list = new ArrayList<NPAudio>(count);
 
         if (cursor.moveToFirst()) {
             if (identityScope != null) {
@@ -182,7 +186,7 @@ public class AudioDao extends AbstractDao<Audio, Long> {
      * @param cursor
      * @return
      */
-    private List<Audio> loadDeepAllAndCloseCursor(Cursor cursor) {
+    private List<NPAudio> loadDeepAllAndCloseCursor(Cursor cursor) {
         try {
             return loadAllDeepFromCursor(cursor);
         } finally {
@@ -197,7 +201,7 @@ public class AudioDao extends AbstractDao<Audio, Long> {
      * @param selectionArg
      * @return List of NPVideo
      */
-    public List<Audio> getAll(String where, String... selectionArg) {
+    public List<NPAudio> getAll(String where, String... selectionArg) {
         Cursor cursor = db.rawQuery(getSelectDeep() + where, selectionArg);
         return loadDeepAllAndCloseCursor(cursor);
     }
@@ -222,7 +226,7 @@ public class AudioDao extends AbstractDao<Audio, Long> {
 
 
     /**
-     * Defines all the properties of the Audio Model
+     * Defines all the properties of the NPAudio Model
      */
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");

@@ -31,7 +31,7 @@ public class ProjectConstants {
     public static final String ACCESS_SECRET_NAME = "dropbox_access_secret";
     public static final String ACCOUNT_PREFS_NAME = "Dropbox_key_secret_pref_file";
 
-    // code for Video, Audio, Shots, Sources and Questions
+    // code for Video, NPAudio, Shots, Sources and Questions
     public static final int AUDIO_CAPTURE_CODE = 11;
     public static final int VIDEO_RECORD_CODE = 12;
     public static final int SHOTS_CODE = 13;

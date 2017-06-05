@@ -5,17 +5,19 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.util.Log;
 
+import org.greenrobot.greendao.async.AsyncOperation;
+import org.greenrobot.greendao.async.AsyncOperationListener;
+import org.greenrobot.greendao.async.AsyncSession;
+import org.greenrobot.greendao.database.Database;
+import org.greenrobot.greendao.query.QueryBuilder;
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import de.greenrobot.dao.async.AsyncOperation;
-import de.greenrobot.dao.async.AsyncOperationListener;
-import de.greenrobot.dao.async.AsyncSession;
-import de.greenrobot.dao.query.QueryBuilder;
 import newspoints.sfsu.com.newsp_data.dao.DaoMaster;
 import newspoints.sfsu.com.newsp_data.dao.DaoSession;
 import newspoints.sfsu.com.newsp_data.dao.UserDao;
-import newspoints.sfsu.com.newsp_data.entities.Audio;
+import newspoints.sfsu.com.newsp_data.entities.NPAudio;
 import newspoints.sfsu.com.newsp_data.entities.MyEvent;
 import newspoints.sfsu.com.newsp_data.entities.NPVideo;
 import newspoints.sfsu.com.newsp_data.entities.Project;
@@ -39,8 +41,8 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
      * The Android Activity reference for access to DatabaseManager.
      */
     private Context context;
-    private DaoMaster.DevOpenHelper mHelper;
-    private SQLiteDatabase database;
+    private DaoMaster.OpenHelper mHelper;
+    private Database database;
     private DaoMaster daoMaster;
     private DaoSession daoSession;
     private AsyncSession asyncSession;
@@ -82,7 +84,6 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
      * Query for readable DB
      */
     public void openReadableDb() throws SQLiteException {
-        database = mHelper.getReadableDatabase();
         daoMaster = new DaoMaster(database);
         daoSession = daoMaster.newSession();
         asyncSession = daoSession.startAsyncSession();
@@ -93,7 +94,6 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
      * Query for writable DB
      */
     public void openWritableDb() throws SQLiteException {
-        database = mHelper.getWritableDatabase();
         daoMaster = new DaoMaster(database);
         daoSession = daoMaster.newSession();
         asyncSession = daoSession.startAsyncSession();
@@ -106,7 +106,7 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
             daoSession.clear();
             daoSession = null;
         }
-        if (database != null && database.isOpen()) {
+        if (database != null) {
             database.close();
         }
         if (mHelper != null) {
@@ -125,7 +125,7 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
             DaoMaster.dropAllTables(database, true);  // drops all tables
             mHelper.onCreate(database);
             asyncSession.deleteAll(User.class);
-            asyncSession.deleteAll(Audio.class);
+            asyncSession.deleteAll(NPAudio.class);
             asyncSession.deleteAll(NPVideo.class);
             asyncSession.deleteAll(Project.class);
             asyncSession.deleteAll(MyEvent.class);
@@ -235,12 +235,12 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
     }
 
     @Override
-    public Audio insertAudio(Audio audio) {
+    public NPAudio insertAudio(NPAudio audio) {
         return null;
     }
 
     @Override
-    public void updateAudio(Audio audio) {
+    public void updateAudio(NPAudio audio) {
 
     }
 
@@ -255,12 +255,12 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
     }
 
     @Override
-    public List<Audio> listAudios() {
+    public List<NPAudio> listAudios() {
         return null;
     }
 
     @Override
-    public Audio insertProject(Project project) {
+    public NPAudio insertProject(Project project) {
         return null;
     }
 
@@ -285,7 +285,7 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
     }
 
     @Override
-    public Audio insertEvent(MyEvent event) {
+    public NPAudio insertEvent(MyEvent event) {
         return null;
     }
 

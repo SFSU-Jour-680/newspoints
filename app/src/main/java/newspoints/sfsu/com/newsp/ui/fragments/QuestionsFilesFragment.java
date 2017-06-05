@@ -205,7 +205,7 @@ public class QuestionsFilesFragment extends BaseFragment {
         });
 
         final FloatingActionButton actionA = (FloatingActionButton) v.findViewById(R.id.action_audio);
-        actionA.setTitle("Capture Audio");
+        actionA.setTitle("Capture NPAudio");
         actionA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

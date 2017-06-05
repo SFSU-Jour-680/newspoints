@@ -2,7 +2,7 @@ package newspoints.sfsu.com.newsp_data.manager;
 
 import java.util.List;
 
-import newspoints.sfsu.com.newsp_data.entities.Audio;
+import newspoints.sfsu.com.newsp_data.entities.NPAudio;
 import newspoints.sfsu.com.newsp_data.entities.MyEvent;
 import newspoints.sfsu.com.newsp_data.entities.NPVideo;
 import newspoints.sfsu.com.newsp_data.entities.Project;
@@ -104,22 +104,22 @@ public interface IDatabaseManager {
     // ============================================ AUDIO ============================================
 
     /**
-     * Insert a Audio into the DB
+     * Insert a NPAudio into the DB
      *
      * @param audio to be inserted
      */
-    public Audio insertAudio(Audio audio);
+    public NPAudio insertAudio(NPAudio audio);
 
     /**
      * Update a audio from the DB
      *
      * @param audio to be updated
      */
-    public void updateAudio(Audio audio);
+    public void updateAudio(NPAudio audio);
 
 
     /**
-     * Delete a Audio with a certain id from the DB
+     * Delete a NPAudio with a certain id from the DB
      *
      * @param audioId of audio to be deleted
      */
@@ -127,18 +127,18 @@ public interface IDatabaseManager {
 
 
     /**
-     * @param audioId - of the Audio we want to fetch
-     * @return Return a Audio by its id
+     * @param audioId - of the NPAudio we want to fetch
+     * @return Return a NPAudio by its id
      */
     NPVideo getAudioById(Long audioId);
 
 
     /**
-     * List all the Audio from the DB
+     * List all the NPAudio from the DB
      *
      * @return list of audios
      */
-    public List<Audio> listAudios();
+    public List<NPAudio> listAudios();
 
     // ============================================ PROJECT ============================================
 
@@ -147,7 +147,7 @@ public interface IDatabaseManager {
      *
      * @param project to be inserted
      */
-    public Audio insertProject(Project project);
+    public NPAudio insertProject(Project project);
 
     /**
      * Update a project from the DB
@@ -187,7 +187,7 @@ public interface IDatabaseManager {
      *
      * @param event to be inserted
      */
-    public Audio insertEvent(MyEvent event);
+    public NPAudio insertEvent(MyEvent event);
 
     /**
      * Update a event from the DB

@@ -27,7 +27,6 @@ public class DynamicTagsActivity extends MainBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dynamic_tags);
 
-
         this.reportFullyDrawn();
 
         try {
@@ -48,12 +47,12 @@ public class DynamicTagsActivity extends MainBaseActivity {
                     DynamicQuestionsFragment dynamicQuestionsFragment = new DynamicQuestionsFragment();
                     performAddFragmentTransaction(dynamicQuestionsFragment);
                 }
-                // add Sources to Audio
+                // add Sources to NPAudio
                 else if (getIntent().getIntExtra(MediaCaptureActivity.KEY_ADD_NEW_AUDIO_SOURCE, 0) == 1) {
                     DynamicSourcesFragment dynamicSourcesFragment = new DynamicSourcesFragment();
                     performAddFragmentTransaction(dynamicSourcesFragment);
                 }
-                // add Questions to Audio
+                // add Questions to NPAudio
                 else if (getIntent().getIntExtra(MediaCaptureActivity.KEY_ADD_NEW_AUDIO_QUESTION, 0) == 1) {
                     DynamicQuestionsFragment dynamicQuestionsFragment = new DynamicQuestionsFragment();
                     performAddFragmentTransaction(dynamicQuestionsFragment);

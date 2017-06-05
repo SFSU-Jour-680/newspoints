@@ -70,7 +70,7 @@
         android:textColor="@color/textSecondary"
         android:textSize="@dimen/font_X_small"/>
 
-    <!-- Audio components-->
+    <!-- NPAudio components-->
     <ImageView
         android:id="@+id/icon_listItem_audioCount"
         android:layout_width="@dimen/view_dimen_large"

@@ -3,7 +3,7 @@ package newspoints.sfsu.com.newsp.event;
 import java.util.ArrayList;
 
 /**
- * Event to publish the sources selected by the User in order to attach to Video or Audio
+ * Event to publish the sources selected by the User in order to attach to Video or NPAudio
  * <p>
  * Created by Pavitra on 4/12/2016.
  */

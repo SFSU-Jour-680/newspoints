@@ -5,14 +5,12 @@ import android.os.Parcelable;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import org.greenrobot.greendao.DaoException;
+
 import java.util.ArrayList;
 
-import de.greenrobot.dao.DaoException;
-import newspoints.sfsu.com.newsp_data.R;
 import newspoints.sfsu.com.newsp_data.dao.DaoSession;
 import newspoints.sfsu.com.newsp_data.dao.ProjectDao;
-import newspoints.sfsu.com.newsp_data.util.ProjectConstants;
-import newspoints.sfsu.com.newsp_lib.util.AppUtil;
 
 /**
  * Represents a Project entity that contains meta data, event and media content such as image, videos and/or audio.
@@ -43,7 +41,7 @@ public class Project implements Parcelable {
     private long cloudStorage;
     private LatLng mLatLng;
     private long timestamp;
-    private ArrayList<Audio> audioList;
+    private ArrayList<NPAudio> audioList;
     private ArrayList<NPVideo> NPVideoList;
 
 
@@ -100,14 +98,20 @@ public class Project implements Parcelable {
         cloudStorage = in.readInt();
         mLatLng = in.readParcelable(LatLng.class.getClassLoader());
         timestamp = in.readLong();
-        audioList = in.createTypedArrayList(Audio.CREATOR);
+        audioList = in.createTypedArrayList(NPAudio.CREATOR);
         NPVideoList = in.createTypedArrayList(NPVideo.CREATOR);
     }
 
+    /**
+     * create a temp instance
+     * @return
+     */
     public static Project createInstance() {
-        return new Project("Leonardo wins OSCAR", "News", "drawable://" + R.drawable.placeholder_android_n, "", "", "First" +
-                " time in the history, Leo wins an Oscar. People are going crazy", ProjectConstants.CLOUD_GOOGLE_DRIVE,
-                2.5, 1.6, AppUtil.getCurrentTimeStamp());
+
+//        return new Project("Leonardo wins OSCAR", "News", "drawable://" + R.drawable.placeholder_android_n, "", "", "First" +
+//                " time in the history, Leo wins an Oscar. People are going crazy", ProjectConstants.CLOUD_GOOGLE_DRIVE,
+//                2.5, 1.6, AppUtil.getCurrentTimeStamp());
+        return null;
     }
 
     /**
@@ -203,7 +207,7 @@ public class Project implements Parcelable {
         return audioList;
     }
 
-    public void setAudioList(ArrayList<Audio> audioList) {
+    public void setAudioList(ArrayList<NPAudio> audioList) {
         this.audioList = audioList;
     }
 

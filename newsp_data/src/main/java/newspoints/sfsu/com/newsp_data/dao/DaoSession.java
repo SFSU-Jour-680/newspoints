@@ -1,18 +1,18 @@
 package newspoints.sfsu.com.newsp_data.dao;
 
-import android.database.sqlite.SQLiteDatabase;
-
-import com.newspoints.journalist.entities.Audio;
-import com.newspoints.journalist.entities.MyVideo;
-import com.newspoints.journalist.entities.Project;
-import com.newspoints.journalist.entities.User;
+import org.greenrobot.greendao.AbstractDao;
+import org.greenrobot.greendao.AbstractDaoSession;
+import org.greenrobot.greendao.database.Database;
+import org.greenrobot.greendao.identityscope.IdentityScopeType;
+import org.greenrobot.greendao.internal.DaoConfig;
 
 import java.util.Map;
 
-import de.greenrobot.dao.AbstractDao;
-import de.greenrobot.dao.AbstractDaoSession;
-import de.greenrobot.dao.identityscope.IdentityScopeType;
-import de.greenrobot.dao.internal.DaoConfig;
+import newspoints.sfsu.com.newsp_data.entities.NPAudio;
+import newspoints.sfsu.com.newsp_data.entities.NPVideo;
+import newspoints.sfsu.com.newsp_data.entities.Project;
+import newspoints.sfsu.com.newsp_data.entities.User;
+
 
 /**
  * {@inheritDoc}
@@ -29,8 +29,7 @@ public class DaoSession extends AbstractDaoSession {
     private final AudioDao audioDao;
     private final ProjectDao projectDao;
 
-    public DaoSession(SQLiteDatabase db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
-            daoConfigMap) {
+    public DaoSession(Database db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig> daoConfigMap) {
         super(db);
 
         dBUserDaoConfig = daoConfigMap.get(UserDao.class).clone();
@@ -51,10 +50,12 @@ public class DaoSession extends AbstractDaoSession {
         projectDao = new ProjectDao(projectDaoConfig, this);
 
         registerDao(User.class, dBUserDao);
-        registerDao(MyVideo.class, videoDao);
-        registerDao(Audio.class, audioDao);
+        registerDao(NPVideo.class, videoDao);
+        registerDao(NPAudio.class, audioDao);
         registerDao(Project.class, projectDao);
     }
+
+
 
     public void clear() {
         dBUserDaoConfig.getIdentityScope().clear();

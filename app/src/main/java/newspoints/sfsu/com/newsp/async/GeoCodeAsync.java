@@ -1,4 +1,4 @@
-package newspoints.sfsu.com.newsp_data.entities;
+package newspoints.sfsu.com.newsp.async;
 
 import android.content.Context;
 import android.location.Address;
@@ -6,12 +6,12 @@ import android.location.Geocoder;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.newspoints.journalist.ui.CreateProjectActivity;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+import newspoints.sfsu.com.newsp.ui.CreateProjectActivity;
 
 // will call the activity_video_capture activity and returns the list of cities matching the location
 

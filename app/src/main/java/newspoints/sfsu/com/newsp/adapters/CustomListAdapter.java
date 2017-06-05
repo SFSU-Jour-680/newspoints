@@ -21,7 +21,7 @@ import java.util.concurrent.ExecutionException;
 
 import newspoints.sfsu.com.newsp.R;
 import newspoints.sfsu.com.newsp.ui.CreateProjectActivity;
-import newspoints.sfsu.com.newsp_data.entities.GeoCodeAsync;
+import newspoints.sfsu.com.newsp.async.GeoCodeAsync;
 import newspoints.sfsu.com.newsp_data.util.ProjectConstants;
 
 public class CustomListAdapter extends ArrayAdapter {

@@ -4,9 +4,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 import com.google.common.base.Preconditions;
-import de.greenrobot.dao.AbstractDao;
-import de.greenrobot.dao.Property;
-import de.greenrobot.dao.internal.DaoConfig;
+
+import org.greenrobot.greendao.AbstractDao;
+import org.greenrobot.greendao.Property;
+import org.greenrobot.greendao.database.DatabaseStatement;
+import org.greenrobot.greendao.internal.DaoConfig;
+
 import newspoints.sfsu.com.newsp_data.entities.Shot;
 
 /**
@@ -64,6 +67,11 @@ public class ShotDao extends AbstractDao<Shot, Integer> {
     }
 
     @Override
+    protected void bindValues(DatabaseStatement stmt, Shot entity) {
+
+    }
+
+    @Override
     protected void bindValues(SQLiteStatement stmt, Shot entity) {
         stmt.clearBindings();
 
@@ -85,6 +93,11 @@ public class ShotDao extends AbstractDao<Shot, Integer> {
     @Override
     protected Integer getKey(Shot entity) {
         return null;
+    }
+
+    @Override
+    protected boolean hasKey(Shot entity) {
+        return false;
     }
 
     @Override

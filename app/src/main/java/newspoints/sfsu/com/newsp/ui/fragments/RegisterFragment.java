@@ -60,7 +60,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         // Required empty public constructor
     }
 
-    public static RegisterFragment newInstance(String param1, String param2) {
+    public static RegisterFragment newInstance() {
         RegisterFragment fragment = new RegisterFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -114,7 +114,6 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             }
         }
     }
-
 
     @Override
     public void onStart() {

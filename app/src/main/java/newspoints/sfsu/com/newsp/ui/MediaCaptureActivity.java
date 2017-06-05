@@ -32,7 +32,7 @@ public class MediaCaptureActivity extends AppCompatActivity implements
     public static final String KEY_ADD_NEW_VIDEO_SOURCE = "add_new_video_source_tag";
     public static final String KEY_VIDEO_SOURCES_SELECTED = "video_sources_selected";
     public static final String KEY_ADD_NEW_AUDIO_SOURCE = "add_new_audio_source_tag";
-    public static final String KEY_VIDEO_QUESTIONS_SELECTED = "video_questions_seleected";
+    public static final String KEY_VIDEO_QUESTIONS_SELECTED = "video_questions_selected";
     public static final String KEY_ADD_NEW_VIDEO_QUESTION = "add_new_video_question_tag";
     public static final String KEY_AUDIO_SOURCES_SELECTED = "audio_sources_selected";
     public static final String KEY_ADD_NEW_AUDIO_QUESTION = "add_new_audio_question_tag";
@@ -169,7 +169,7 @@ public class MediaCaptureActivity extends AppCompatActivity implements
     }
 
     /**
-     * Subscribes to the event of success in selecting Sources for Audio
+     * Subscribes to the event of success in selecting Sources for NPAudio
      *
      * @param onLoaded
      */
@@ -193,7 +193,7 @@ public class MediaCaptureActivity extends AppCompatActivity implements
     }
 
     /**
-     * Subscribes to the event of success in selecting Questions for Audio
+     * Subscribes to the event of success in selecting Questions for NPAudio
      *
      * @param onLoaded
      */

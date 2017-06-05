@@ -2,8 +2,11 @@ package newspoints.sfsu.com.newsp_data.dao;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;
-import de.greenrobot.dao.AbstractDao;
-import de.greenrobot.dao.internal.DaoConfig;
+
+import org.greenrobot.greendao.AbstractDao;
+import org.greenrobot.greendao.database.DatabaseStatement;
+import org.greenrobot.greendao.internal.DaoConfig;
+
 import newspoints.sfsu.com.newsp_data.entities.Source;
 
 /**
@@ -41,6 +44,11 @@ public class SourceDao extends AbstractDao<Source, Integer> {
     }
 
     @Override
+    protected void bindValues(DatabaseStatement stmt, Source entity) {
+
+    }
+
+    @Override
     protected void bindValues(SQLiteStatement stmt, Source entity) {
 
     }
@@ -53,6 +61,11 @@ public class SourceDao extends AbstractDao<Source, Integer> {
     @Override
     protected Integer getKey(Source entity) {
         return null;
+    }
+
+    @Override
+    protected boolean hasKey(Source entity) {
+        return false;
     }
 
     @Override

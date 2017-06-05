@@ -8,21 +8,21 @@ import com.google.android.gms.maps.model.LatLng;
 import java.util.ArrayList;
 
 /**
- * Audio specifies the recorded sound captured by the user in a specific project.
+ * NPAudio specifies the recorded sound captured by the user in a specific project.
  * <p>
  * Created by Pavitra on 2/16/2016.
  */
-public class Audio implements Parcelable {
-    public static final Creator<Audio> CREATOR = new Creator<Audio>() {
+public class NPAudio implements Parcelable {
+    public static final Creator<NPAudio> CREATOR = new Creator<NPAudio>() {
         @Override
-        public Audio createFromParcel(Parcel in) {
-            return new Audio(in);
+        public NPAudio createFromParcel(Parcel in) {
+            return new NPAudio(in);
         }
 
 
         @Override
-        public Audio[] newArray(int size) {
-            return new Audio[size];
+        public NPAudio[] newArray(int size) {
+            return new NPAudio[size];
         }
     };
 
@@ -38,7 +38,9 @@ public class Audio implements Parcelable {
     private ArrayList<Shot> shotList;
 
     // overloading for Demo purpose
-    public Audio(String name, String audioSourceUrl, int startTime, int endTime, long timestamp, LatLng mLatLng, ArrayList<Question> questionList, ArrayList<Source> sourceList, ArrayList<Shot> shotList) {
+    public NPAudio(String name, String audioSourceUrl, int startTime, int endTime, long timestamp,
+                   LatLng mLatLng, ArrayList<Question> questionList, ArrayList<Source> sourceList,
+                   ArrayList<Shot> shotList) {
         this.name = name;
         this.audioSourceUrl = audioSourceUrl;
         this.startTime = startTime;
@@ -51,7 +53,9 @@ public class Audio implements Parcelable {
     }
 
     // main constructor
-    public Audio(long id, String name, String audioSourceUrl, int startTime, int endTime, long timestamp, LatLng mLatLng, ArrayList<Question> questionList, ArrayList<Source> sourceList, ArrayList<Shot> shotList) {
+    public NPAudio(long id, String name, String audioSourceUrl, int startTime, int endTime,
+                   long timestamp, LatLng mLatLng, ArrayList<Question> questionList,
+                   ArrayList<Source> sourceList, ArrayList<Shot> shotList) {
         this.id = id;
         this.name = name;
         this.audioSourceUrl = audioSourceUrl;
@@ -64,7 +68,7 @@ public class Audio implements Parcelable {
         this.shotList = shotList;
     }
 
-    protected Audio(Parcel in) {
+    protected NPAudio(Parcel in) {
         id = in.readLong();
         name = in.readString();
         audioSourceUrl = in.readString();
@@ -77,7 +81,7 @@ public class Audio implements Parcelable {
 
     }
 
-    public Audio(long id, String name, String audioSourceUrl, int startTime, int endTime, long timestamp) {
+    public NPAudio(long id, String name, String audioSourceUrl, int startTime, int endTime, long timestamp) {
         this.id = id;
         this.name = name;
         this.audioSourceUrl = audioSourceUrl;

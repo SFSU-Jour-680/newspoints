@@ -30,7 +30,7 @@ import newspoints.sfsu.com.newsp_lib.bus.BusProvider;
 import newspoints.sfsu.com.newsp_lib.event.QuestionsEvent;
 
 /**
- * Allows user to choose from many default or create new Questions that can be attached to the Video/Audio and finally can be
+ * Allows user to choose from many default or create new Questions that can be attached to the Video/NPAudio and finally can be
  * exported to the XML. When the user selects the appropriate {@link newspoints.sfsu.com.newsp_data.entities.Question}, it gets
  * attached to the video which can be further viewed before exporting.
  */
@@ -182,7 +182,7 @@ public class DynamicQuestionsFragment extends Fragment {
     }
 
     /**
-     * Publishes user selected Questions for Audio
+     * Publishes user selected Questions for NPAudio
      */
     private void publishQuestionsToAudio() {
         BusProvider.bus().post(new QuestionsEvent.OnAudioQuestionsLoaded(userSelectedQuestions));

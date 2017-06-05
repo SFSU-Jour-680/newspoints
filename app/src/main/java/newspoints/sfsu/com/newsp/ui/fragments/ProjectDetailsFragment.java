@@ -218,7 +218,7 @@ public class ProjectDetailsFragment extends Fragment implements View.OnClickList
         void onClickCaptureAudio(long projectId);
 
         /**
-         * Callback to handle the onclic of the Audio FAB in {@link ProjectDetailsFragment}
+         * Callback to handle the onclic of the NPAudio FAB in {@link ProjectDetailsFragment}
          *
          * @param projectId
          */
@@ -232,7 +232,7 @@ public class ProjectDetailsFragment extends Fragment implements View.OnClickList
         void onClickOpenVideoLibrary(long projectId);
 
         /**
-         * Callback to handle the onclick of the Audio library TextView in {@link ProjectDetailsFragment}
+         * Callback to handle the onclick of the NPAudio library TextView in {@link ProjectDetailsFragment}
          *
          * @param projectId
          */

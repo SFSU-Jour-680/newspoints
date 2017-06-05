@@ -56,7 +56,7 @@
     <string name="text_uploadProject_googleDrive">Upload to Google Drive</string>
     <string name="text_uploadProject_dropbox">Upload to Dropbox</string>
 
-    <!-- MyVideo and Audio Recorder -->
+    <!-- MyVideo and NPAudio Recorder -->
     <string name="text_shots">Shots</string>
     <string name="text_sources">Sources</string>
     <string name="text_questions">Questions</string>

@@ -1,7 +1,7 @@
 package newspoints.sfsu.com.newsp_data.entities;
 
 /**
- * Used to store the recording details of Video or Audio
+ * Used to store the recording details of Video or NPAudio
  * <p>
  * Created by Pavitra on 7/26/2015.
  */

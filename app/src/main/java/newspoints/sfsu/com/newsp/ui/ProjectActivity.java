@@ -20,7 +20,7 @@ import newspoints.sfsu.com.newsp_data.entities.Project;
 
 /**
  * ProjectActivity is the container Activity for Projects created by user. Each Project can be seen in List View as well as
- * Maps View. The project created by user contains MyVideo and Audio files.
+ * Maps View. The project created by user contains MyVideo and NPAudio files.
  */
 public class ProjectActivity extends MainBaseActivity implements
         CreateProjectFragment.ICreateProjectCallbacks,

@@ -15,8 +15,8 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
-import com.nononsenseapps.filepicker.AbstractFilePickerFragment;
 import com.nononsenseapps.filepicker.FilePickerActivity;
+import com.nononsenseapps.filepicker.FilePickerFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +43,7 @@ public class DashboardFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static DashboardFragment newInstance(String param1, String param2) {
+    public static DashboardFragment newInstance() {
         DashboardFragment fragment = new DashboardFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -77,10 +77,10 @@ public class DashboardFragment extends Fragment {
         relativeLayout_importXML.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent filePickerIntent = new Intent(mContext, MyFilePickerActivity.class);
-//                filePickerIntent.setAction(Intent.ACTION_GET_CONTENT);
-//                filePickerIntent.putExtra(FilePickerActivity.EXTRA_MODE, AbstractFilePickerFragment.MODE_FILE);
-//                startActivityForResult(filePickerIntent, CODE_SD);
+                Intent filePickerIntent = new Intent(mContext, FilePickerActivity.class);
+                filePickerIntent.setAction(Intent.ACTION_GET_CONTENT);
+                filePickerIntent.putExtra(FilePickerActivity.EXTRA_MODE, FilePickerFragment.MODE_FILE);
+                startActivityForResult(filePickerIntent, CODE_SD);
             }
         });
 
@@ -161,8 +161,6 @@ public class DashboardFragment extends Fragment {
     }
 
     public interface IDashboardCallbacks {
-
         void onClickFabCaptureMedia();
-
     }
 }
