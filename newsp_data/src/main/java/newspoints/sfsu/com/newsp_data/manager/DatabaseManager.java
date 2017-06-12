@@ -216,7 +216,6 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
 
     @Override
     public void updateVideo(NPVideo NPVideo) {
-
     }
 
     @Override
@@ -241,7 +240,6 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
 
     @Override
     public void updateAudio(NPAudio audio) {
-
     }
 
     @Override
@@ -266,7 +264,6 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
 
     @Override
     public void updateProject(Project project) {
-
     }
 
     @Override
@@ -291,7 +288,6 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
 
     @Override
     public void updateEvent(MyEvent event) {
-
     }
 
     @Override

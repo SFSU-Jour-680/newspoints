@@ -6,5 +6,4 @@ package newspoints.sfsu.com.newsp_data.entities;
  * Created by Pavitra on 2/19/2016.
  */
 public class MyEvent {
-
 }
