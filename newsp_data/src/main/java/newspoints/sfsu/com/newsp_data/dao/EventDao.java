@@ -9,13 +9,13 @@ import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.database.DatabaseStatement;
 import org.greenrobot.greendao.internal.DaoConfig;
 
-import newspoints.sfsu.com.newsp_data.entities.MyEvent;
+import newspoints.sfsu.com.newsp_data.entities.NPEvent;
 
 /**
  *
  * Created by Pavitra on 2/19/2016.
  */
-public class EventDao extends AbstractDao<MyEvent, Long> {
+public class EventDao extends AbstractDao<NPEvent, Long> {
 
     public static final String TABLENAME = "EVENT";
     private DaoSession mDaoSession;
@@ -34,7 +34,7 @@ public class EventDao extends AbstractDao<MyEvent, Long> {
     }
 
     @Override
-    protected MyEvent readEntity(Cursor cursor, int offset) {
+    protected NPEvent readEntity(Cursor cursor, int offset) {
         return null;
     }
 
@@ -44,30 +44,30 @@ public class EventDao extends AbstractDao<MyEvent, Long> {
     }
 
     @Override
-    protected void readEntity(Cursor cursor, MyEvent entity, int offset) {
+    protected void readEntity(Cursor cursor, NPEvent entity, int offset) {
     }
 
     @Override
-    protected void bindValues(DatabaseStatement stmt, MyEvent entity) {
+    protected void bindValues(DatabaseStatement stmt, NPEvent entity) {
 
     }
 
     @Override
-    protected void bindValues(SQLiteStatement stmt, MyEvent entity) {
+    protected void bindValues(SQLiteStatement stmt, NPEvent entity) {
     }
 
     @Override
-    protected Long updateKeyAfterInsert(MyEvent entity, long rowId) {
+    protected Long updateKeyAfterInsert(NPEvent entity, long rowId) {
         return null;
     }
 
     @Override
-    protected Long getKey(MyEvent entity) {
+    protected Long getKey(NPEvent entity) {
         return null;
     }
 
     @Override
-    protected boolean hasKey(MyEvent entity) {
+    protected boolean hasKey(NPEvent entity) {
         return false;
     }
 

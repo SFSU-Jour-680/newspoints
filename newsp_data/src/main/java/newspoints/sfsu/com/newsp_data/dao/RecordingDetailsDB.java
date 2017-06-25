@@ -606,40 +606,6 @@ public class RecordingDetailsDB extends SQLiteOpenHelper {
         return "null";
     }
 
-    // MOVE: this doenst belong here. Move to UI layer
-    // method to get the Location - Lat Long of the project
-    /*
-    public List<CreateProjectActivity.LocationDetails> getLocationPoints() {
-        SQLiteDatabase sqlLiteDatabase = this.getReadableDatabase();
-        List<CreateProjectActivity.LocationDetails> latLongs = new ArrayList<>();
-        // build raw query
-        String raw = "SELECT * FROM " + TABLENAME1;
-
-        // Fire query on cursor
-        Cursor c = sqlLiteDatabase.rawQuery(raw, null);
-
-        try {
-            if (c.moveToFirst()) {
-                do {
-                    String[] columns = c.getColumnNames();
-                    Log.v("=====>", Arrays.toString(columns));
-                    String projectName = c.getString(c.getColumnIndex(PROJECT_NAME));
-                    double LAT = c.getDouble(c.getColumnIndex(LATITUDE));
-                    double LONG = c.getDouble(c.getColumnIndex(LONGITUDE));
-                    Log.v("=====>", projectName + ", " + LAT + " : " + LONG);
-                    latLongs.add(new CreateProjectActivity.LocationDetails(projectName, LAT, LONG));
-                } while (c.moveToNext());
-            }
-        } catch (Exception e) {
-            Log.e("===DB", e.getMessage());
-        } finally {
-            if (!c.isClosed()) {
-                c.close();
-            }
-        }
-        return latLongs;
-    }*/
-
 
     // helper methods to get the data fromDB for playing video
     public String[] getProjectMainDetails(String projectName) {

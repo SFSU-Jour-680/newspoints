@@ -28,6 +28,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import newspoints.sfsu.com.newsp.R;
+import newspoints.sfsu.com.newsp.ui.customview.TagTextView;
 import newspoints.sfsu.com.newsp.util.ProjectConstants;
 import newspoints.sfsu.com.newsp_lib.event.SourcesEvent;
 
@@ -145,25 +146,6 @@ public class DynamicSourcesFragment extends Fragment implements View.OnClickList
         }
     }
 
-//    /**
-//     * Factory method to create new TextView for Sources tags
-//     *
-//     * @return
-//     */
-//    private TextView createSourceTagTextView() {
-//        TextView txtView_newTag = new TextView(mContext);
-//        FlowLayout.LayoutParams layoutParams = new FlowLayout.LayoutParams(FlowLayout.LayoutParams.WRAP_CONTENT,
-//                FlowLayout.LayoutParams.WRAP_CONTENT);
-//        txtView_newTag.setLayoutParams(layoutParams);
-//        txtView_newTag.setBackground(ContextCompat.getDrawable(mContext, R.drawable.view_roundborder_background_sources));
-//        txtView_newTag.setTextColor(ContextCompat.getColor(mContext, R.color.textSecondary));
-//        txtView_newTag.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
-//        txtView_newTag.setPadding(12, 6, 12, 6);
-//        layoutParams.setMargins(24, 24, 24, 24);
-//
-//        return txtView_newTag;
-//    }
-
     /**
      * Gets the input text value from the EditText and creates new Tag
      */
@@ -192,7 +174,6 @@ public class DynamicSourcesFragment extends Fragment implements View.OnClickList
     public void onAttach(Context context) {
         super.onAttach(context);
         mContext = context;
-
     }
 
     @Override

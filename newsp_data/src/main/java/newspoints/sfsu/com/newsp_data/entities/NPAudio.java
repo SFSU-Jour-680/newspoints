@@ -19,7 +19,6 @@ public class NPAudio implements Parcelable {
             return new NPAudio(in);
         }
 
-
         @Override
         public NPAudio[] newArray(int size) {
             return new NPAudio[size];

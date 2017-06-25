@@ -254,11 +254,11 @@ public class CreateProjectActivity extends Activity implements View.OnClickListe
                 }
                 SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy hh:mm");
                 String dateString = date.format(new Date());
-                if (picturePath == null) {
-                    ProjectConstants.dbClass.projectDetails(projectId, dir, subDir, null, dateString, latitude, longitude);
-                } else {
-                    ProjectConstants.dbClass.projectDetails(projectId, dir, subDir, picturePath, dateString, latitude, longitude);
-                }
+//                if (picturePath == null) {
+//                    ProjectConstants.dbClass.projectDetails(projectId, dir, subDir, null, dateString, latitude, longitude);
+//                } else {
+//                    ProjectConstants.dbClass.projectDetails(projectId, dir, subDir, picturePath, dateString, latitude, longitude);
+//                }
 
                 Intent intent = new Intent(CreateProjectActivity.this,
                         FilesListActivity.class);

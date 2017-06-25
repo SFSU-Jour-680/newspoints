@@ -212,31 +212,31 @@ public class AudioRecorderActivity extends Activity implements OnClickListener {
             SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy  hh:mm");
             String formattedDate = df.format(new Date());
 
-            if (!eventID.contains("404")) {
-                if (hours == 0) {
-                    ProjectConstants.dbClass.recordingDetails(selectedProject,
-                            "" + recordingId, minutes + ":" + seconds, eventID,
-                            "audio", picturePath, recordingDuration,
-                            formattedDate);
-                } else {
-                    ProjectConstants.dbClass.recordingDetails(selectedProject,
-                            "" + recordingId, "" + hours + ":" + minutes + ":"
-                                    + seconds, eventID, "audio", picturePath,
-                            recordingDuration, formattedDate);
-                }
-            } else {
-                if (hours == 0) {
-                    ProjectConstants.dbClass.recordingDetails(selectedProject,
-                            "" + recordingId, minutes + ":" + seconds, eventID,
-                            "audio", picturePath, recordingDuration,
-                            formattedDate);
-                } else {
-                    ProjectConstants.dbClass.recordingDetails(selectedProject,
-                            "" + recordingId, "" + hours + ":" + minutes + ":"
-                                    + seconds, eventID, "audio", picturePath,
-                            recordingDuration, formattedDate);
-                }
-            }
+//            if (!eventID.contains("404")) {
+//                if (hours == 0) {
+//                    ProjectConstants.dbClass.recordingDetails(selectedProject,
+//                            "" + recordingId, minutes + ":" + seconds, eventID,
+//                            "audio", picturePath, recordingDuration,
+//                            formattedDate);
+//                } else {
+//                    ProjectConstants.dbClass.recordingDetails(selectedProject,
+//                            "" + recordingId, "" + hours + ":" + minutes + ":"
+//                                    + seconds, eventID, "audio", picturePath,
+//                            recordingDuration, formattedDate);
+//                }
+//            } else {
+//                if (hours == 0) {
+//                    ProjectConstants.dbClass.recordingDetails(selectedProject,
+//                            "" + recordingId, minutes + ":" + seconds, eventID,
+//                            "audio", picturePath, recordingDuration,
+//                            formattedDate);
+//                } else {
+//                    ProjectConstants.dbClass.recordingDetails(selectedProject,
+//                            "" + recordingId, "" + hours + ":" + minutes + ":"
+//                                    + seconds, eventID, "audio", picturePath,
+//                            recordingDuration, formattedDate);
+//                }
+//            }
             lastEndTime = endTime;
 
             lastEndDate = endDate;
@@ -368,7 +368,8 @@ public class AudioRecorderActivity extends Activity implements OnClickListener {
         categorySelected = ProjectConstants.selectedProjectCategory;
         Intent intent = getIntent();
         projectName = intent.getStringExtra("foldername");
-        picturePath = ProjectConstants.dbClass.getProjectImage(projectName);
+        // TODO : get project name
+        // picturePath = ProjectConstants.dbClass.getProjectImage(projectName);
         try {
             if (!picturePath.equalsIgnoreCase("False")) {
                 selectedImage.setBackground(null);
@@ -499,11 +500,6 @@ public class AudioRecorderActivity extends Activity implements OnClickListener {
         prefs = getSharedPreferences(this.getPackageName(), MODE_PRIVATE);
     }
 
-    private String getEventId(String eventName) {
-        String eventId = ProjectConstants.dbClass.getEventId(eventName);
-        return eventId;
-
-    }
 
     @Override
     public void onClick(View v) {
@@ -538,7 +534,8 @@ public class AudioRecorderActivity extends Activity implements OnClickListener {
 
             String selectedProject = ProjectConstants.selectedProjectName;
 
-            String tempRecordingId = ProjectConstants.dbClass.getLastRecordingId(selectedProject, "audio");
+//            String tempRecordingId = ProjectConstants.dbClass.getLastRecordingId(selectedProject, "audio"); // TODO get recording ID
+            String tempRecordingId = "12345";
 
             if (tempRecordingId == null || tempRecordingId.equals("") || tempRecordingId.equals("null")) {
                 tempRecordingId = String.valueOf(2);

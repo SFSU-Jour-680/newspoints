@@ -40,8 +40,8 @@ import newspoints.sfsu.com.newsp.R;
 import newspoints.sfsu.com.newsp.adapters.FilesListAdapter;
 import newspoints.sfsu.com.newsp.ui.AudioRecorderActivity;
 import newspoints.sfsu.com.newsp.ui.VideoCaptureActivity;
-import newspoints.sfsu.com.newsp.util.ProjectConstants;
 import newspoints.sfsu.com.newsp_data.dao.RecordingDetailsDB;
+import newspoints.sfsu.com.newsp_data.util.ProjectConstants;
 import newspoints.sfsu.com.newsp_lib.util.BaseFragment;
 
 public class ShotFilesFragment extends BaseFragment {
@@ -210,7 +210,7 @@ public class ShotFilesFragment extends BaseFragment {
                 // get the absolute path for the Selected MyVideo
                 String absolutePathToVideo = ProjectConstants.getAbsolutePathToVideo(projectName);
 
-                ProjectConstants.dbClass.getFilesList(ProjectConstants.selectedProjectName, ShotFilesFragment.this);
+//                ProjectConstants.dbClass.getFilesList(ProjectConstants.selectedProjectName, ShotFilesFragment.this);
                 String selectedVideoId = recordingId[position];
                 String selectedVideoDuration = endTime[position];
 

@@ -97,7 +97,7 @@ public class ProjectDao extends AbstractDao<Project, Long> {
         entity.setSub_dir_url(cursor.getString(offset + 5));
         entity.setDescription(cursor.getString(offset + 6));
         entity.setCloudStorage(cursor.getLong(offset + 7));
-        entity.setTimestamp(cursor.getLong(offset + 8));
+        entity.setmTimestamp(cursor.getLong(offset + 8));
     }
 
     @Override
@@ -121,7 +121,7 @@ public class ProjectDao extends AbstractDao<Project, Long> {
         stmt.bindString(6, entity.getSub_dir_url());
         stmt.bindString(7, entity.getDescription());
         stmt.bindLong(8, entity.getCloudStorage());
-        stmt.bindLong(9, entity.getTimestamp());
+        stmt.bindLong(9, entity.getmTimestamp());
     }
 
     @Override

@@ -49,6 +49,7 @@ import newspoints.sfsu.com.newsp.storagedir.project.BaseProjectDirFactory;
 import newspoints.sfsu.com.newsp.storagedir.project.ProjectStorageDirFactory;
 import newspoints.sfsu.com.newsp_data.entities.Project;
 import newspoints.sfsu.com.newsp_data.util.ProjectConstants;
+import newspoints.sfsu.com.newsp_lib.log.Logger;
 import newspoints.sfsu.com.newsp_lib.util.AppUtil;
 import newspoints.sfsu.com.newsp_lib.util.PermissionUtils;
 
@@ -104,28 +105,7 @@ public class CreateProjectFragment extends Fragment implements View.OnClickListe
         fab_addImage.setOnClickListener(this);
         mBaseProjectDirFactory = new BaseProjectDirFactory();
 
-
         return rootView;
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
     }
 
     @Override
@@ -142,11 +122,6 @@ public class CreateProjectFragment extends Fragment implements View.OnClickListe
         } else {
             throw new RuntimeException(context.toString() + " must implement ICreateProjectCallbacks interface");
         }
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 
     @Override
@@ -261,7 +236,7 @@ public class CreateProjectFragment extends Fragment implements View.OnClickListe
         chooseImageAlertDialog.setPositiveButton(R.string.alertDialog_projectImage_gallery,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
-                        Intent pictureActionIntent = null;
+                        Intent pictureActionIntent;
                         // Select the Intent depending on Camera
                         pictureActionIntent = new Intent(Intent.ACTION_PICK,
                                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

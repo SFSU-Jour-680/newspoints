@@ -1,7 +1,6 @@
 package newspoints.sfsu.com.newsp.util;
 
 import android.graphics.Typeface;
-import android.os.Environment;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -154,22 +153,6 @@ public class ProjectConstants {
         questions.add("peaceful");
         questions.add("arrests");
 
-
         return questions;
     }
-
-    // method to generate the Path of the video for specific project and category
-    public static String getAbsolutePathToVideo(String projectName) {
-        final String SYSTEM_PATH = Environment.getExternalStorageDirectory().getAbsolutePath();
-
-        // get Project ID and Category in order to build the absolute path
-        String projectDetails[] = ProjectConstants.dbClass.getProjectMainDetails(projectName);
-
-        // finally build the path
-        String selectedVideoPath = SYSTEM_PATH + "/journalist/" + projectName + "/" +
-                projectDetails[1] + "/";
-
-        return selectedVideoPath;
-    }
-
 }

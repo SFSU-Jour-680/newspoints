@@ -3,7 +3,7 @@ package newspoints.sfsu.com.newsp_data.manager;
 import java.util.List;
 
 import newspoints.sfsu.com.newsp_data.entities.NPAudio;
-import newspoints.sfsu.com.newsp_data.entities.MyEvent;
+import newspoints.sfsu.com.newsp_data.entities.NPEvent;
 import newspoints.sfsu.com.newsp_data.entities.NPVideo;
 import newspoints.sfsu.com.newsp_data.entities.Project;
 import newspoints.sfsu.com.newsp_data.entities.User;
@@ -187,14 +187,14 @@ public interface IDatabaseManager {
      *
      * @param event to be inserted
      */
-    public NPAudio insertEvent(MyEvent event);
+    public NPAudio insertEvent(NPEvent event);
 
     /**
      * Update a event from the DB
      *
      * @param event to be updated
      */
-    public void updateEvent(MyEvent event);
+    public void updateEvent(NPEvent event);
 
 
     /**
@@ -202,7 +202,7 @@ public interface IDatabaseManager {
      *
      * @param eventId of Event to be deleted
      */
-    public boolean deleteEventById(MyEvent eventId);
+    public boolean deleteEventById(NPEvent eventId);
 
 
     /**
@@ -217,5 +217,5 @@ public interface IDatabaseManager {
      *
      * @return list of events
      */
-    public List<MyEvent> listEvents();
+    public List<NPEvent> listEvents();
 }

@@ -133,20 +133,7 @@ public class CustomListAdapter extends ArrayAdapter {
 
         // set the city project location
         projectLocation = (TextView) convertView.findViewById(R.id.textView_listItem_location);
-        List<CreateProjectActivity.LocationDetails> locationDetails = ProjectConstants.dbClass.getLocationPoints();
-
-        GeoCodeAsync geoCodeCity = new GeoCodeAsync(_context);
-        geoCodeCity.execute(locationDetails);
-
-        String city = "demo";
-        try {
-            city = geoCodeCity.get().toString();
-            projectLocation.setText(city);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+        projectLocation.setText("San Francisco");
         return convertView;
     }
 }

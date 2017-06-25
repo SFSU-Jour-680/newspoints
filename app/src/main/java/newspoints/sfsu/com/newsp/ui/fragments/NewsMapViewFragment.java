@@ -2,6 +2,8 @@ package newspoints.sfsu.com.newsp.ui.fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
@@ -21,6 +23,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import newspoints.sfsu.com.newsp.R;
@@ -74,12 +78,7 @@ public class NewsMapViewFragment extends BaseFragment implements OnMapReadyCallb
 
         try {
             //get the LocationDetails from the Database.
-            locationDetails = ProjectConstants.dbClass.getLocationPoints();
-            if (locationDetails == null) {
-                Toast.makeText(mContext, "No data to display for Map", Toast.LENGTH_LONG).show();
-                // get the LocationDetails from the Database.
-                locationDetails = ProjectConstants.dbClass.getLocationPoints();
-            }
+            locationDetails = new ArrayList<>();
         } catch (Exception e) {
             Log.d("=====>", e.getMessage());
         }

@@ -51,7 +51,7 @@ public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.
             Log.i(TAG, mProject.toString());
 
             holder.txtView_projectName.setText(mProject.getName());
-            String dateAndTime = AppUtil.getFullDateAndTime(mProject.getTimestamp());
+            String dateAndTime = AppUtil.getFullDateAndTime(mProject.getmTimestamp());
             holder.txtView_dateTime.setText(dateAndTime);
             holder.txtView_location.setText("San Francisco");
             holder.txtView_audioCount.setText("14");

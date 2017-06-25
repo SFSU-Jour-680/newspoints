@@ -5,5 +5,4 @@ public class ExportRecordingDetails {
 	public String shotId, recordingId;
 	public int duration, endTime;
 
-
 }

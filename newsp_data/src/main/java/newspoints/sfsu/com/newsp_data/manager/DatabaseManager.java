@@ -1,7 +1,6 @@
 package newspoints.sfsu.com.newsp_data.manager;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.util.Log;
 
@@ -18,7 +17,7 @@ import newspoints.sfsu.com.newsp_data.dao.DaoMaster;
 import newspoints.sfsu.com.newsp_data.dao.DaoSession;
 import newspoints.sfsu.com.newsp_data.dao.UserDao;
 import newspoints.sfsu.com.newsp_data.entities.NPAudio;
-import newspoints.sfsu.com.newsp_data.entities.MyEvent;
+import newspoints.sfsu.com.newsp_data.entities.NPEvent;
 import newspoints.sfsu.com.newsp_data.entities.NPVideo;
 import newspoints.sfsu.com.newsp_data.entities.Project;
 import newspoints.sfsu.com.newsp_data.entities.User;
@@ -128,7 +127,7 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
             asyncSession.deleteAll(NPAudio.class);
             asyncSession.deleteAll(NPVideo.class);
             asyncSession.deleteAll(Project.class);
-            asyncSession.deleteAll(MyEvent.class);
+            asyncSession.deleteAll(NPEvent.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -282,16 +281,16 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
     }
 
     @Override
-    public NPAudio insertEvent(MyEvent event) {
+    public NPAudio insertEvent(NPEvent event) {
         return null;
     }
 
     @Override
-    public void updateEvent(MyEvent event) {
+    public void updateEvent(NPEvent event) {
     }
 
     @Override
-    public boolean deleteEventById(MyEvent eventId) {
+    public boolean deleteEventById(NPEvent eventId) {
         return false;
     }
 
@@ -301,7 +300,7 @@ public class DatabaseManager implements IDatabaseManager, AsyncOperationListener
     }
 
     @Override
-    public List<MyEvent> listEvents() {
+    public List<NPEvent> listEvents() {
         return null;
     }
 

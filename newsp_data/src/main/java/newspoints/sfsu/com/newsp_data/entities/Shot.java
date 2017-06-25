@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * A shot represents type of video being captured in case of any {@link MyEvent}
+ * A shot represents type of video being captured in case of any {@link NPEvent}
  * <p>
  * Defines four different attributes {@code id}, {@code context}, {@code label} and {@code value}
  * </p>

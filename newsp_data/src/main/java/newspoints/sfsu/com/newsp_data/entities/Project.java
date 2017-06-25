@@ -13,9 +13,13 @@ import newspoints.sfsu.com.newsp_data.dao.DaoSession;
 import newspoints.sfsu.com.newsp_data.dao.ProjectDao;
 
 /**
- * Represents a Project entity that contains meta data, event and media content such as image, videos and/or audio.
- * <p/>
+ * <p>
+ * Represents a Project entity that contains meta data, {@link NPEvent} and media content such as image, videos and/or audio.
+ * </p>
+ * A Project is a parent entity to hold multiple {@link NPEvent}s.
+ * <p>
  * Created by Pavitra on 2/18/2016.
+ * </p>
  */
 public class Project implements Parcelable {
 
@@ -30,6 +34,7 @@ public class Project implements Parcelable {
             return new Project[size];
         }
     };
+
     private long id;
     private String name;
     private String category;
@@ -40,9 +45,9 @@ public class Project implements Parcelable {
     // should be either of 0x47, 0x0x44 or 0xFFFF
     private long cloudStorage;
     private LatLng mLatLng;
-    private long timestamp;
-    private ArrayList<NPAudio> audioList;
-    private ArrayList<NPVideo> NPVideoList;
+    private long mTimestamp;
+    private ArrayList<NPAudio> mAudioList;
+    private ArrayList<NPVideo> mVideoList;
 
 
     /**
@@ -60,14 +65,16 @@ public class Project implements Parcelable {
     }
 
     // DEMO purpose
-    public Project(String name, String category, String image_url, String project_dir_url, String sub_dir_url, String description, int cloudStorage, double longitude, double latitude, long timestamp) {
+    public Project(String name, String category, String image_url, String project_dir_url,
+                   String sub_dir_url, String description, int cloudStorage,
+                   double longitude, double latitude, long timestamp) {
         this.name = name;
         this.category = category;
         this.image_url = image_url;
         this.description = description;
         this.cloudStorage = cloudStorage;
         this.mLatLng = new LatLng(latitude, longitude);
-        this.timestamp = timestamp;
+        this.mTimestamp = timestamp;
     }
 
     /**
@@ -83,7 +90,7 @@ public class Project implements Parcelable {
         this.sub_dir_url = sub_dir_url;
         this.description = description;
         this.cloudStorage = cloudStorage;
-        this.timestamp = timestamp;
+        this.mTimestamp = timestamp;
     }
 
 
@@ -97,9 +104,9 @@ public class Project implements Parcelable {
         description = in.readString();
         cloudStorage = in.readInt();
         mLatLng = in.readParcelable(LatLng.class.getClassLoader());
-        timestamp = in.readLong();
-        audioList = in.createTypedArrayList(NPAudio.CREATOR);
-        NPVideoList = in.createTypedArrayList(NPVideo.CREATOR);
+        mTimestamp = in.readLong();
+        mAudioList = in.createTypedArrayList(NPAudio.CREATOR);
+        mVideoList = in.createTypedArrayList(NPVideo.CREATOR);
     }
 
     /**
@@ -179,12 +186,12 @@ public class Project implements Parcelable {
     }
 
 
-    public long getTimestamp() {
-        return timestamp;
+    public long getmTimestamp() {
+        return mTimestamp;
     }
 
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
+    public void setmTimestamp(long mTimestamp) {
+        this.mTimestamp = mTimestamp;
     }
 
     @Override
@@ -199,24 +206,24 @@ public class Project implements Parcelable {
                 " : " + cloudStorage +
                 " : " + mLatLng.latitude +
                 " : " + mLatLng.longitude +
-                " : " + timestamp;
+                " : " + mTimestamp;
     }
 
 
-    public ArrayList getAudioList() {
-        return audioList;
+    public ArrayList getmAudioList() {
+        return mAudioList;
     }
 
-    public void setAudioList(ArrayList<NPAudio> audioList) {
-        this.audioList = audioList;
+    public void setmAudioList(ArrayList<NPAudio> mAudioList) {
+        this.mAudioList = mAudioList;
     }
 
-    public ArrayList<NPVideo> getNPVideoList() {
-        return NPVideoList;
+    public ArrayList<NPVideo> getmVideoList() {
+        return mVideoList;
     }
 
-    public void setNPVideoList(ArrayList<NPVideo> NPVideoList) {
-        this.NPVideoList = NPVideoList;
+    public void setmVideoList(ArrayList<NPVideo> mVideoList) {
+        this.mVideoList = mVideoList;
     }
 
     public long getCloudStorage() {
@@ -243,9 +250,9 @@ public class Project implements Parcelable {
         dest.writeString(description);
         dest.writeLong(cloudStorage);
         dest.writeParcelable(mLatLng, flags);
-        dest.writeLong(timestamp);
-        dest.writeTypedList(audioList);
-        dest.writeTypedList(NPVideoList);
+        dest.writeLong(mTimestamp);
+        dest.writeTypedList(mAudioList);
+        dest.writeTypedList(mVideoList);
     }
 
     /**

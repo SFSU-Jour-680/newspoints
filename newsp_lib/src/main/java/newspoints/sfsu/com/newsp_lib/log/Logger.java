@@ -1,4 +1,4 @@
-package newspoints.sfsu.com.newsp_lib.util;
+package newspoints.sfsu.com.newsp_lib.log;
 
 /**
  * Provides custom logging on top of the Android Log class. The log messages are later inserted

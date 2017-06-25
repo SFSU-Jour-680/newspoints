@@ -2,19 +2,17 @@ package newspoints.sfsu.com.newsp.xmlop;
 
 import android.content.Context;
 
-import com.newspoints.journalist.entities.Category;
-import com.newspoints.journalist.entities.Question;
-import com.newspoints.journalist.entities.Shot;
-import com.newspoints.journalist.entities.Source;
-
 import java.util.List;
+
+import newspoints.sfsu.com.newsp_data.entities.Category;
+import newspoints.sfsu.com.newsp_data.entities.Question;
+import newspoints.sfsu.com.newsp_data.entities.Shot;
+import newspoints.sfsu.com.newsp_data.entities.Source;
+
 
 /**
  * <p>
- * Parses the input XML and converts a list of
- * {@link com.newspoints.journalist.entities.Category} containing list of
- * {@link com.newspoints.journalist.entities.Source}, {@link com.newspoints.journalist.entities.Shot} and
- * {@link com.newspoints.journalist.entities.Question}
+ * Parses the input XML and converts a list of Entities
  * </p>
  * <p>
  * Returns a list of Categories after successfully parsing the input file.

@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 /**
  * A Source represents a real world entity such as a police officer, friend,  neighbor who provides substantial information and
- * can provide validating information on {@link MyEvent}.
+ * can provide validating information on {@link NPEvent}.
  * <p>
  * Defines three different properties {@code id}, {@code label} and {@code value}.
  * </p>

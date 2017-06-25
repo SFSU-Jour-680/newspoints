@@ -2,7 +2,21 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+    }
 }
 
 dependencies {
@@ -15,5 +29,9 @@ dependencies {
     compile 'com.dropbox.core:dropbox-core-sdk:2.1.1'
 
     // google drive api
-    compile 'com.google.apis:google-api-services-drive:v3-rev59-1.22.0'
+    compile ('com.google.android.gms:play-services-drive:11.0.1'){
+        exclude module: 'httpclient' //by artifact name
+        exclude group: 'org.apache.httpcomponents' //by group
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient' //by both name and artifact
+    }
 }

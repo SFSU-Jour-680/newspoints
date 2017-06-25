@@ -22,13 +22,15 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.Text;
 
-import com.newspoints.journalist.util.ProjectConstants;
-import com.newspoints.journalist.util.ExportRecordingDetails;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Environment;
+
+import newspoints.sfsu.com.newsp_data.util.ProjectConstants;
+import newspoints.sfsu.com.newsp_lib.util.ExportRecordingDetails;
+
 
 public class ExportXML {
 
@@ -312,7 +314,7 @@ public class ExportXML {
 			DOMSource source = new DOMSource(doc);
 			trans.transform(source, result);
 
-			String xmlString = "﻿<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE xmeml> "
+			String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE xmeml> "
 					+ "<xmeml version=\"4\">" + sw.toString() + "<\\xmeml";
 
 			String fpath = Environment.getExternalStorageDirectory()
@@ -414,8 +416,7 @@ public class ExportXML {
 		child4.appendChild(child5);
 
 		child5 = doc.createElement("duration");
-		System.out.println(":Looking for duration" + shotId.shotId
-				+ " REcpgoinm id " + shotId.recordingId);
+		// TODO: get duration
 		int duration = ProjectConstants.dbClass
 				.getVideoRecordingDuration(shotId.recordingId);
 		duration = duration * 30;
@@ -554,7 +555,7 @@ public class ExportXML {
 	}
 
 	private Element AddVideoTag(ExportRecordingDetails shotId, int noOfClips,
-			int clipId) {
+								int clipId) {
 		// TODO Auto-generated method stub
 
 		// childer being added to Track ie child3
